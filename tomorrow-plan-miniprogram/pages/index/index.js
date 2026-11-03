@@ -57,6 +57,7 @@ Page({
 
     var settings = store.getSettings()
     var needReview = this.checkReview(settings)
+    var streak = this.computeStreak()
 
     // 第一次进来默认排到明天；用户手动选过就一直用他选的
     var target = this.data.target || dateUtil.tomorrow()
@@ -67,6 +68,7 @@ Page({
       cards: cards,
       needReview: needReview,
       remindTime: settings.remindTime,
+      streak: streak,
       target: target,
       targetLabel: dateUtil.friendlyDate(target),
       isCustomDate: target !== dateUtil.today() && target !== dateUtil.tomorrow(),
@@ -101,6 +103,18 @@ Page({
       targetLabel: dateUtil.friendlyDate(date),
       isCustomDate: date !== dateUtil.today() && date !== dateUtil.tomorrow()
     })
+  },
+
+  /** 连续复盘了几天（今天还没复盘就从昨天往前数） */
+  computeStreak: function () {
+    var day = dateUtil.today()
+    if (!store.hasReview(day)) day = dateUtil.shift(day, -1)
+    var n = 0
+    while (n < 999 && store.hasReview(day)) {
+      n++
+      day = dateUtil.shift(day, -1)
+    }
+    return n
   },
 
   /** 到了设定的提醒时间还没复盘，就在「复盘」tab 上点个小红点 */

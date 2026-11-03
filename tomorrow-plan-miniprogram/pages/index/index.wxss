@@ -266,3 +266,7 @@
 .tips-title {
   color: #0a84ff;
 }
+/* 连续天数 */
+.streak-wrap {
+  padding: 6rpx 0 14rpx;
+}

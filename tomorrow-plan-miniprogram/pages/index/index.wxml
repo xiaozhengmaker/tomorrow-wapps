@@ -4,7 +4,14 @@
     <view class="hero-eyebrow">TOMORROW</view>
     <view class="hero-title">随手写下来</view>
     <view class="hero-title hero-title-2">明天照着做</view>
-    <view class="hero-sub">把明天大概要做的事丢进来，我拆成一项一项，排好时间。</view>
+    <view class="streak-wrap" wx:if="{{streak > 0}}">
+    <view class="streak">
+      <view class="flame"></view>
+      <text>连续</text><text class="num">{{streak}}</text><text>天</text>
+    </view>
+  </view>
+
+  <view class="hero-sub">把明天大概要做的事丢进来，我拆成一项一项，排好时间。</view>
   </view>
 
   <view

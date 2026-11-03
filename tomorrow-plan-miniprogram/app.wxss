@@ -1,8 +1,8 @@
-/* 全局：Joi 那种极简规划器 —— 纯白、无阴影、淡彩胶囊、超粗字、虚线分隔 */
+/* 全局：Duolingo 那种塑料积木质感 —— 白卡 + 4rpx 硬边框 + 纯色厚边按钮 + 高饱和图标 */
 
 page {
   background-color: #ffffff;
-  color: #0a0a0a;
+  color: #4b4b4b;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
     Helvetica, "Microsoft YaHei", sans-serif;
   font-size: 28rpx;
@@ -13,20 +13,20 @@ page {
 .page {
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 32rpx 40rpx 120rpx;
+  padding: 32rpx 32rpx 120rpx;
   background-color: #ffffff;
 }
 
-/* 卡片是「一层极淡的边界」，不用阴影 —— Joi 里几乎没有投影 */
+/* 卡片：白面 + 4rpx 灰硬边，没有投影 */
 .card {
   position: relative;
   box-sizing: border-box;
   background: #ffffff;
-  border: 2rpx solid #f2f2f7;
-  border-radius: 24rpx;
+  border: 4rpx solid #e5e5e5;
+  border-radius: 28rpx;
 }
 
-/* ---------- 按钮：平色胶囊，没有厚度 ---------- */
+/* ---------- 按钮：底部一条实心厚边，按下去整体下沉 ---------- */
 
 .btn-primary {
   display: flex;
@@ -34,184 +34,247 @@ page {
   justify-content: center;
   box-sizing: border-box;
   height: 100rpx;
-  border-radius: 999rpx;
-  background: #0a84ff;
+  border-radius: 28rpx;
+  background: #1cb0f6;
   color: #ffffff;
   font-size: 32rpx;
   font-weight: 800;
-  letter-spacing: 0.5rpx;
-  transition: transform .16s cubic-bezier(.2,.8,.3,1), opacity .16s;
+  letter-spacing: 1rpx;
+  box-shadow: 0 10rpx 0 #1899d6;
+  transition: transform .1s ease-out, box-shadow .1s ease-out;
 }
 
 .btn-primary:active {
-  transform: scale(0.972);
-  opacity: 0.92;
+  transform: translateY(10rpx);
+  box-shadow: 0 0 0 #1899d6;
 }
 
 .btn-primary.is-disabled {
-  background: #e5e5ea;
-  color: #aeaeb2;
-  transform: none;
+  background: #e5e5e5;
+  color: #afafaf;
+  box-shadow: 0 10rpx 0 #d0d0d0;
 }
 
 .btn-ghost {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 88rpx;
+  height: 92rpx;
   padding: 0 36rpx;
-  border-radius: 999rpx;
-  background: #f2f2f7;
-  color: #1c1c1e;
+  border-radius: 28rpx;
+  border: 4rpx solid #e5e5e5;
+  background: #ffffff;
+  color: #1cb0f6;
   font-size: 28rpx;
-  font-weight: 600;
-  transition: transform .16s cubic-bezier(.2,.8,.3,1), background .16s;
+  font-weight: 800;
+  box-shadow: 0 8rpx 0 #e5e5e5;
+  transition: transform .1s ease-out, box-shadow .1s ease-out;
 }
 
 .btn-ghost:active {
-  transform: scale(0.972);
-  background: #e8e8ed;
+  transform: translateY(8rpx);
+  box-shadow: 0 0 0 #e5e5e5;
+  background: #f7f7f7;
 }
 
 .btn-ghost-quiet {
-  background: #ffffff;
-  color: #8e8e93;
-  border: 2rpx solid #f2f2f7;
+  color: #afafaf;
 }
 
 .btn-danger {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 88rpx;
+  height: 92rpx;
   padding: 0 40rpx;
-  border-radius: 999rpx;
-  background: #ffede6;
-  color: #ff3b30;
+  border-radius: 28rpx;
+  background: #ff4b4b;
+  color: #ffffff;
   font-size: 29rpx;
-  font-weight: 700;
-  transition: transform .16s cubic-bezier(.2,.8,.3,1);
+  font-weight: 800;
+  box-shadow: 0 8rpx 0 #ea2b2b;
+  transition: transform .1s ease-out, box-shadow .1s ease-out;
 }
 
 .btn-danger:active {
-  transform: scale(0.972);
+  transform: translateY(8rpx);
+  box-shadow: 0 0 0 #ea2b2b;
 }
 
 .btn-flex {
   flex: 1;
 }
 
-/* ---------- 标签：淡彩胶囊，无描边 ---------- */
+/* ---------- 标签 ---------- */
 
 .chip {
   display: inline-flex;
   align-items: center;
-  height: 58rpx;
+  height: 60rpx;
   padding: 0 28rpx;
-  border-radius: 999rpx;
-  background: #f2f2f7;
-  color: #3a3a3c;
+  border-radius: 20rpx;
+  border: 4rpx solid #e5e5e5;
+  background: #ffffff;
+  color: #4b4b4b;
   font-size: 24rpx;
-  font-weight: 600;
-  transition: transform .16s cubic-bezier(.2,.8,.3,1);
+  font-weight: 700;
+  transition: transform .1s ease-out;
 }
 
 .chip:active {
-  transform: scale(0.96);
+  transform: translateY(2rpx);
+  background: #f7f7f7;
 }
 
 .tag {
   display: inline-block;
   padding: 5rpx 18rpx;
   margin-right: 10rpx;
-  border-radius: 999rpx;
+  border-radius: 10rpx;
   font-size: 21rpx;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.5;
 }
 
-.tag-work {
-  background: #e5f3ff;
-  color: #0a84ff;
+.tag-work { background: #e3f4fd; color: #1899d6; }
+.tag-life { background: #fff4d1; color: #b98a00; }
+.tag-health { background: #e8f8d8; color: #58a700; }
+.tag-study { background: #f3e6ff; color: #a568cc; }
+.tag-misc { background: #f0f0f0; color: #8a8a8a; }
+.tag-important { background: #ffe0e0; color: #ea2b2b; }
+.tag-auto { background: #f0f0f0; color: #afafaf; }
+
+/* ---------- 分类图标方块 ---------- */
+
+.row-icon {
+  flex: none;
+  width: 68rpx;
+  height: 68rpx;
+  margin-right: 20rpx;
+  border-radius: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 800;
 }
 
-.tag-life {
-  background: #fff5d6;
-  color: #c77700;
-}
+.icon-work { background: #1cb0f6; }
+.icon-life { background: #ffc800; }
+.icon-health { background: #58cc02; }
+.icon-study { background: #ce82ff; }
+.icon-misc { background: #afafaf; }
 
-.tag-health {
-  background: #e7f9ec;
-  color: #34c759;
-}
-
-.tag-study {
-  background: #eeeaff;
-  color: #5e5ce6;
-}
-
-.tag-misc {
-  background: #f2f2f7;
-  color: #8e8e93;
-}
-
-.tag-important {
-  background: #ffede6;
-  color: #ff5f2e;
-}
-
-.tag-auto {
-  background: #f2f2f7;
-  color: #aeaeb2;
-}
-
-/* ---------- 小号按钮（放最后，覆盖上面的高度） ---------- */
+/* ---------- 小号按钮 ---------- */
 
 .btn-sm {
-  height: 68rpx;
+  height: 76rpx;
   padding: 0 28rpx;
   font-size: 25rpx;
-  border-radius: 999rpx;
+  border-radius: 22rpx;
   letter-spacing: 0;
+  box-shadow: 0 6rpx 0 #1899d6;
 }
 
-/* ---------- 动效：入场依次升起 ---------- */
+.btn-sm:active {
+  transform: translateY(6rpx);
+  box-shadow: 0 0 0 #1899d6;
+}
+
+/* ---------- 粗进度条 ---------- */
+
+.progress-track {
+  height: 28rpx;
+  border-radius: 14rpx;
+  background: #e5e5e5;
+  overflow: hidden;
+}
+
+.progress-fill {
+  position: relative;
+  height: 100%;
+  border-radius: 14rpx;
+  background: #58cc02;
+  transition: width .35s cubic-bezier(.2, .8, .3, 1);
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  left: 10rpx;
+  right: 10rpx;
+  top: 5rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+/* ---------- 动效 ---------- */
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  70% { transform: scale(0.94); }
+  100% { transform: scale(1); }
+}
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(20rpx); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes popIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  70% { transform: scale(1.03); }
-  100% { opacity: 1; transform: scale(1); }
+@keyframes cheer {
+  0% { opacity: 0; transform: scale(0.7) rotate(-4deg); }
+  60% { transform: scale(1.06) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
 }
+
+.pop { animation: pop .36s cubic-bezier(.2, .8, .3, 1); }
+.cheer { animation: cheer .42s cubic-bezier(.2, .8, .3, 1) both; }
 
 .stagger > view {
-  animation: rise 0.36s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+  animation: rise .32s cubic-bezier(.2, .8, .3, 1) both;
 }
 
-.stagger > view:nth-child(1) { animation-delay: 0.02s; }
-.stagger > view:nth-child(2) { animation-delay: 0.06s; }
-.stagger > view:nth-child(3) { animation-delay: 0.10s; }
-.stagger > view:nth-child(4) { animation-delay: 0.14s; }
-.stagger > view:nth-child(5) { animation-delay: 0.18s; }
-.stagger > view:nth-child(6) { animation-delay: 0.22s; }
-.stagger > view:nth-child(7) { animation-delay: 0.26s; }
-.stagger > view:nth-child(8) { animation-delay: 0.30s; }
+.stagger > view:nth-child(1) { animation-delay: .02s; }
+.stagger > view:nth-child(2) { animation-delay: .05s; }
+.stagger > view:nth-child(3) { animation-delay: .08s; }
+.stagger > view:nth-child(4) { animation-delay: .11s; }
+.stagger > view:nth-child(5) { animation-delay: .14s; }
+.stagger > view:nth-child(6) { animation-delay: .17s; }
+.stagger > view:nth-child(7) { animation-delay: .20s; }
+.stagger > view:nth-child(8) { animation-delay: .23s; }
 
-.pop-in {
-  animation: popIn 0.34s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+/* ---------- 连续天数徽章 ---------- */
+
+.streak {
+  display: inline-flex;
+  align-items: center;
+  height: 64rpx;
+  padding: 0 24rpx 0 12rpx;
+  border-radius: 999rpx;
+  background: #fff4d1;
+  color: #b98a00;
+  font-size: 24rpx;
+  font-weight: 800;
 }
 
-/* ---------- 虚线分隔（Joi 列表的签名） ---------- */
-
-.dash {
-  border-bottom: 2rpx dashed #ececf1;
+.streak .flame {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 12rpx;
+  border-radius: 50% 50% 50% 8rpx;
+  background: #ffc800;
+  transform: rotate(-12deg);
 }
 
-/* ---------- 日期选择（首页 / 拆解页共用） ---------- */
+.streak .num {
+  font-size: 30rpx;
+  margin: 0 4rpx;
+}
+
+/* ---------- 日期选择 ---------- */
 
 .date-row {
   display: flex;
@@ -222,8 +285,8 @@ page {
 .date-label {
   flex: none;
   font-size: 24rpx;
-  color: #8e8e93;
-  font-weight: 600;
+  color: #afafaf;
+  font-weight: 800;
   margin-right: 14rpx;
   padding-top: 12rpx;
 }
@@ -238,125 +301,22 @@ page {
 .date-chip {
   padding: 10rpx 28rpx;
   margin: 0 12rpx 12rpx 0;
-  border-radius: 999rpx;
-  background: #f2f2f7;
-  color: #3a3a3c;
+  border-radius: 20rpx;
+  border: 4rpx solid #e5e5e5;
+  background: #ffffff;
+  color: #4b4b4b;
   font-size: 25rpx;
-  font-weight: 600;
-  transition: transform .16s cubic-bezier(.2,.8,.3,1), background .18s, color .18s;
+  font-weight: 800;
+  transition: transform .1s ease-out;
 }
 
 .date-chip:active {
-  transform: scale(0.95);
+  transform: translateY(2rpx);
 }
 
 .date-chip.is-on {
-  background: #0a84ff;
+  background: #1cb0f6;
+  border-color: #1899d6;
   color: #ffffff;
-  font-weight: 800;
+  box-shadow: 0 4rpx 0 #1899d6;
 }
-
-/* ---------- 行底色：把分类色铺满整行，别只挂在小标签上 ---------- */
-
-.tint-work  { background: #eaf5ff !important; border-color: #d6eaff !important; }
-.tint-life  { background: #fff7e4 !important; border-color: #ffe9b8 !important; }
-.tint-health{ background: #eafaf0 !important; border-color: #cdf0d9 !important; }
-.tint-study { background: #f2eeff !important; border-color: #e0d9ff !important; }
-.tint-misc  { background: #f7f7f9 !important; border-color: #ececf1 !important; }
-
-.tint-work.row:active  { background: #eaf6ff !important; }
-
-/* 左侧彩色竖条，让每行有"血条" */
-.row-body::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 18rpx;
-  bottom: 18rpx;
-  width: 6rpx;
-  border-radius: 6rpx;
-  background: #e5e5ea;
-}
-
-.tint-work::before  { background: #0a84ff; }
-.tint-life::before  { background: #ffb800; }
-.tint-health::before{ background: #34c759; }
-.tint-study::before { background: #5e5ce6; }
-
-/* ---------- 卡片分级上色 ---------- */
-
-.card-tint-blue {
-  background: linear-gradient(160deg, #f0f8ff 0%, #ffffff 62%);
-  border-color: #e2efff;
-}
-
-.card-tint-warm {
-  background: linear-gradient(160deg, #fff8ec 0%, #ffffff 62%);
-  border-color: #fdeed2;
-}
-
-.card-tint-violet {
-  background: linear-gradient(150deg, #efe9ff 0%, #faf8ff 58%, #ffffff 100%);
-  border-color: #ded4ff;
-}
-
-/* ---------- 大数字 ---------- */
-
-.big-number {
-  font-size: 96rpx;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -4rpx;
-  color: #0a84ff;
-}
-
-.big-number .unit {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #aeaeb2;
-  margin-left: 6rpx;
-  letter-spacing: 0;
-}
-
-/* ---------- 进度条：渐变 ---------- */
-
-.bar-fill, .stat-fill {
-  background: linear-gradient(90deg, #5aa5ff 0%, #0a84ff 100%) !important;
-}
-
-.bar, .stat-bar {
-  background: #eef4fb !important;
-}
-/* 行 = 彩色圆角块，去掉虚线 */
-.row-body {
-  border-bottom: 0 !important;
-  border-radius: 22rpx !important;
-  margin-bottom: 16rpx;
-  padding: 24rpx 26rpx 22rpx 30rpx;
-}
-
-.row:last-child .row-body {
-  border-bottom: 0 !important;
-}
-
-/* 时间做成小胶囊 */
-.row-clock {
-  display: inline-block;
-  padding: 4rpx 12rpx;
-  border-radius: 10rpx;
-  background: rgba(255, 255, 255, 0.75);
-  font-size: 26rpx;
-  font-weight: 800;
-}
-/* 设置页 / 输入区：别让整页都是纯白 */
-.group {
-  background: #fbfbfe !important;
-  border-color: #f0f0f6 !important;
-}
-
-.input-card {
-  background: linear-gradient(170deg, #fbfdff 0%, #ffffff 60%) !important;
-  border-color: #e8f1fd !important;
-}
-
-/* tabBar 选中加一条短下划线 */

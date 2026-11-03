@@ -78,6 +78,7 @@ Page({
         assigned: !!it.assigned,
         late: late,
         progress: progressText,
+        tagChar: String(it.tag || '其他').charAt(0),
         statusKey: judgment.key,
         statusLabel: it.done ? '' : judgment.label
       }

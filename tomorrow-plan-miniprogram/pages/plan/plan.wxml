@@ -40,6 +40,7 @@
 
       <view class="row-body card tint-{{item.tagKey}}">
         <view class="row-main">
+          <view class="row-icon icon-{{item.tagKey}}">{{item.tagChar}}</view>
           <text class="row-title">{{item.title}}</text>
           <view
             class="row-check {{item.done ? 'is-checked' : ''}}"
