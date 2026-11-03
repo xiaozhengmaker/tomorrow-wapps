@@ -6,7 +6,7 @@
  */
 
 /** ← 填你的云开发环境 ID，比如 'cloud1-9gxxxxxxxxxx'。留空表示用默认环境 */
-var ENV = ''
+var ENV = 'cloud1-d2g2zn0bm8988b897'
 
 /** ← 填小程序后台「订阅消息」里申请到的模板 ID。留空则「每晚微信提醒」不可用 */
 var SUBSCRIBE_TEMPLATE_ID = ''
