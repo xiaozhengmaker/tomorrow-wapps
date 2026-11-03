@@ -307,7 +307,7 @@ Page({
     wx.showModal({
       title: '丢掉这张卡片？',
       confirmText: '丢掉',
-      confirmColor: '#5b7f4e',
+      confirmColor: '#0b5fd0',
       success: function (res) {
         if (!res.confirm) return
         store.removeBreakdown(id)

@@ -5,7 +5,7 @@
 .eyebrow {
   font-size: 21rpx;
   letter-spacing: 8rpx;
-  color: #a9b79b;
+  color: #c2c2c2;
 }
 
 .title {
@@ -13,14 +13,14 @@
   font-size: 44rpx;
   font-weight: 700;
   line-height: 1.34;
-  color: #2b3a26;
+  color: #0e0e0e;
 }
 
 .sub {
   margin-top: 12rpx;
   font-size: 24rpx;
   line-height: 1.65;
-  color: #7d8a72;
+  color: #808080;
 }
 
 /* ---------- 分组 ---------- */
@@ -34,7 +34,7 @@
   padding: 20rpx 0 6rpx;
   font-size: 21rpx;
   letter-spacing: 3rpx;
-  color: #a9b79b;
+  color: #c2c2c2;
 }
 
 .row {
@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 24rpx 0;
-  border-bottom: 1rpx solid #e9efdd;
+  border-bottom: 1rpx solid #e8e8e3;
 }
 
 .group .row:last-child {
@@ -57,14 +57,14 @@
 .row-title {
   display: block;
   font-size: 29rpx;
-  color: #33422d;
+  color: #1a1a1a;
 }
 
 .row-sub {
   display: block;
   margin-top: 4rpx;
   font-size: 22rpx;
-  color: #94a189;
+  color: #9e9e9e;
 }
 
 .row-link {
@@ -74,24 +74,24 @@
 .row-value {
   flex: none;
   font-size: 28rpx;
-  color: #6f9461;
+  color: #1e7bf5;
 }
 
 .is-off .row-title,
 .is-off .row-value {
-  color: #bcc8b0;
+  color: #d8d8d8;
 }
 
 .note {
   padding: 4rpx 0 18rpx;
   font-size: 24rpx;
   line-height: 1.75;
-  color: #7d8a72;
+  color: #808080;
 }
 
 .note.small {
   font-size: 22rpx;
-  color: #94a189;
+  color: #9e9e9e;
   padding-bottom: 22rpx;
 }
 
@@ -99,5 +99,5 @@
   margin-top: 40rpx;
   text-align: center;
   font-size: 21rpx;
-  color: #bcc8b0;
+  color: #d8d8d8;
 }

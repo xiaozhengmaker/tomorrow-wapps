@@ -5,7 +5,7 @@
 .hero-eyebrow {
   font-size: 21rpx;
   letter-spacing: 8rpx;
-  color: #a9b79b;
+  color: #c2c2c2;
   padding-left: 4rpx;
 }
 
@@ -14,17 +14,17 @@
   font-weight: 700;
   line-height: 1.26;
   letter-spacing: 1rpx;
-  color: #2b3a26;
+  color: #0e0e0e;
 }
 
 .hero-title-2 {
-  color: #6f9461;
+  color: #1e7bf5;
 }
 
 .hero-sub {
   margin-top: 16rpx;
   font-size: 26rpx;
-  color: #7d8a72;
+  color: #808080;
   line-height: 1.6;
   max-width: 560rpx;
 }
@@ -37,7 +37,7 @@
 }
 
 .plan-card:active {
-  background: #f8fbee;
+  background: #fbfbf9;
 }
 
 .plan-head {
@@ -54,8 +54,8 @@
 .plan-badge {
   font-size: 23rpx;
   font-weight: 600;
-  color: #6f9461;
-  background: #eaf1de;
+  color: #1e7bf5;
+  background: #e6f0ff;
   padding: 3rpx 14rpx;
   border-radius: 8rpx;
   margin-right: 14rpx;
@@ -63,19 +63,19 @@
 
 .plan-weekday {
   font-size: 24rpx;
-  color: #8d9b82;
+  color: #8f8f8f;
 }
 
 .plan-ratio {
   font-size: 24rpx;
-  color: #8d9b82;
+  color: #8f8f8f;
   letter-spacing: 1rpx;
 }
 
 .plan-bar {
   height: 8rpx;
   border-radius: 4rpx;
-  background: #e3ebd4;
+  background: #efefea;
   margin: 18rpx 0 6rpx;
   overflow: hidden;
 }
@@ -83,7 +83,7 @@
 .plan-bar-fill {
   height: 100%;
   border-radius: 4rpx;
-  background: linear-gradient(90deg, #86ab74, #5b7f4e);
+  background: linear-gradient(90deg, #3d93ff, #0b5fd0);
   transition: width 0.3s ease;
 }
 
@@ -91,27 +91,27 @@
   display: flex;
   align-items: center;
   padding: 11rpx 0;
-  border-bottom: 1rpx dashed #e9efdd;
+  border-bottom: 1rpx dashed #e8e8e3;
 }
 
 .mini-time {
   flex: none;
   width: 92rpx;
   font-size: 24rpx;
-  color: #94a189;
+  color: #9e9e9e;
 }
 
 .mini-title {
   flex: 1;
   font-size: 27rpx;
-  color: #3a4a33;
+  color: #2b2b2b;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .mini-done {
-  color: #a9b69d;
+  color: #c9c9c9;
   text-decoration: line-through;
 }
 
@@ -124,12 +124,12 @@
 
 .plan-more {
   font-size: 23rpx;
-  color: #a5b39a;
+  color: #bdbdbd;
 }
 
 .plan-link {
   font-size: 23rpx;
-  color: #6f9461;
+  color: #1e7bf5;
 }
 
 /* ---------- 复盘提醒 ---------- */
@@ -139,8 +139,8 @@
   align-items: center;
   padding: 24rpx 26rpx;
   margin-bottom: 22rpx;
-  background: #fdf6e8;
-  border-color: #e6efd3;
+  background: #fff8ec;
+  border-color: #efefe9;
 }
 
 .nudge-main {
@@ -150,19 +150,19 @@
 .nudge-title {
   font-size: 28rpx;
   font-weight: 600;
-  color: #7d6a33;
+  color: #8a6a1f;
 }
 
 .nudge-sub {
   margin-top: 4rpx;
   font-size: 23rpx;
-  color: #8f9a6a;
+  color: #8a8a8a;
 }
 
 .nudge-arrow {
   flex: none;
   font-size: 34rpx;
-  color: #b9c6a2;
+  color: #cfcfca;
 }
 
 /* ---------- 输入区 ---------- */
@@ -181,12 +181,12 @@
 .input-title {
   font-size: 30rpx;
   font-weight: 600;
-  color: #33422d;
+  color: #1a1a1a;
 }
 
 .input-hint {
   font-size: 22rpx;
-  color: #94a189;
+  color: #9e9e9e;
 }
 
 .input-area {
@@ -195,14 +195,14 @@
   min-height: 220rpx;
   padding: 22rpx;
   border-radius: 16rpx;
-  background: #f4f7ea;
+  background: #f2f2ef;
   font-size: 29rpx;
   line-height: 1.72;
-  color: #33422d;
+  color: #1a1a1a;
 }
 
 .input-ph {
-  color: #b3c0a6;
+  color: #cfcfcf;
   line-height: 1.72;
 }
 
@@ -219,7 +219,7 @@
 .input-count {
   margin-left: auto;
   font-size: 22rpx;
-  color: #bcc8b0;
+  color: #d8d8d8;
 }
 
 /* ---------- 底部说明 ---------- */
@@ -232,7 +232,7 @@
 .tips-title {
   font-size: 22rpx;
   letter-spacing: 3rpx;
-  color: #a9b79b;
+  color: #c2c2c2;
   margin-bottom: 14rpx;
 }
 
@@ -245,9 +245,9 @@
 }
 
 .tips-k {
-  color: #7d8a72;
+  color: #808080;
 }
 
 .tips-v {
-  color: #a3b097;
+  color: #b5b5b5;
 }

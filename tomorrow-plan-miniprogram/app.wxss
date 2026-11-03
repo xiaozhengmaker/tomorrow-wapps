@@ -1,8 +1,8 @@
-/* 全局：旅行青蛙那种手绘纸感 —— 米绿底、圆润、软阴影、按钮有厚度 */
+/* 全局：Sugar 那种贴纸拼贴感 —— 纯白面、高饱和色块、胶囊按钮、硬阴影 */
 
 page {
-  background-color: #eef2e2;
-  color: #2f3d29;
+  background-color: #f4f4f1;
+  color: #111111;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
     Helvetica, "Microsoft YaHei", sans-serif;
   font-size: 28rpx;
@@ -10,50 +10,51 @@ page {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 点阵底，像贴纸画布 */
 .page {
   min-height: 100vh;
   box-sizing: border-box;
   padding: 36rpx 32rpx 120rpx;
-  background-image:
-    radial-gradient(120% 38% at 50% 0%, #f9fbf2 0%, rgba(249, 251, 242, 0) 70%),
-    radial-gradient(90% 26% at 50% 100%, #e4eed3 0%, rgba(228, 238, 211, 0) 72%);
+  background-color: #f4f4f1;
+  background-image: radial-gradient(#dededa 1.5rpx, transparent 1.5rpx);
+  background-size: 36rpx 36rpx;
 }
 
 .card {
   position: relative;
   box-sizing: border-box;
-  background: #fbfcf3;
-  border: 2rpx solid #dde6cf;
-  border-radius: 34rpx;
-  box-shadow: 0 10rpx 28rpx rgba(86, 116, 66, 0.09);
+  background: #ffffff;
+  border: 2rpx solid #e4e4df;
+  border-radius: 28rpx;
+  box-shadow: 0 6rpx 0 #ecece7, 0 12rpx 26rpx rgba(17, 17, 17, 0.05);
 }
 
-/* ---------- 按钮：像一块有厚度的纸片 ---------- */
+/* ---------- 按钮：彩色贴纸胶囊 ---------- */
 
 .btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  height: 98rpx;
-  border-radius: 30rpx;
-  background: linear-gradient(180deg, #86ab74 0%, #648a55 100%);
-  color: #fbfdf6;
-  font-size: 31rpx;
-  font-weight: 600;
-  letter-spacing: 3rpx;
-  box-shadow: 0 8rpx 0 #567749, 0 16rpx 28rpx rgba(86, 116, 66, 0.24);
+  height: 96rpx;
+  border-radius: 999rpx;
+  background: #1e7bf5;
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: 800;
+  letter-spacing: 1rpx;
+  box-shadow: 0 8rpx 0 #0b4fa8, 0 14rpx 24rpx rgba(30, 123, 245, 0.22);
 }
 
 .btn-primary:active {
   transform: translateY(6rpx);
-  box-shadow: 0 2rpx 0 #567749, 0 8rpx 16rpx rgba(86, 116, 66, 0.2);
+  box-shadow: 0 2rpx 0 #0b4fa8, 0 8rpx 16rpx rgba(30, 123, 245, 0.2);
 }
 
 .btn-primary.is-disabled {
-  background: #dfe8ce;
-  color: #9caa90;
-  box-shadow: 0 8rpx 0 #d2ddbf;
+  background: #d9d9d4;
+  color: #ffffff;
+  box-shadow: 0 8rpx 0 #c9c9c4;
 }
 
 .btn-ghost {
@@ -61,26 +62,26 @@ page {
   align-items: center;
   justify-content: center;
   height: 84rpx;
-  padding: 0 30rpx;
-  border-radius: 26rpx;
-  border: 2rpx solid #d9e3c9;
-  background: #f7faf0;
-  color: #62705a;
+  padding: 0 34rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid #e4e4df;
+  background: #ffffff;
+  color: #111111;
   font-size: 28rpx;
-  box-shadow: 0 5rpx 0 #e2ead4;
+  font-weight: 600;
+  box-shadow: 0 6rpx 0 #e8e8e3;
 }
 
 .btn-ghost:active {
-  transform: translateY(4rpx);
-  box-shadow: 0 1rpx 0 #e2ead4;
-  background: #eef3e4;
+  transform: translateY(5rpx);
+  box-shadow: 0 1rpx 0 #e8e8e3;
+  background: #fafaf8;
 }
 
 .btn-ghost-quiet {
-  color: #94a189;
-  border-color: #e4ebd7;
-  background: #f6f9ef;
-  box-shadow: 0 5rpx 0 #e9efdd;
+  color: #8f8f8f;
+  border-color: #ecece7;
+  box-shadow: 0 6rpx 0 #f0f0ec;
 }
 
 .btn-danger {
@@ -89,94 +90,139 @@ page {
   justify-content: center;
   height: 86rpx;
   padding: 0 40rpx;
-  border-radius: 26rpx;
-  border: 2rpx solid #e2cdb8;
-  background: #fbf2e6;
-  color: #b06a45;
+  border-radius: 999rpx;
+  border: 2rpx solid #f0c9c2;
+  background: #fff1ec;
+  color: #d9301a;
   font-size: 29rpx;
-  box-shadow: 0 5rpx 0 #ecdfcc;
+  font-weight: 700;
+  box-shadow: 0 6rpx 0 #f6dbd5;
 }
 
 .btn-danger:active {
-  transform: translateY(4rpx);
-  box-shadow: 0 1rpx 0 #ecdfcc;
+  transform: translateY(5rpx);
+  box-shadow: 0 1rpx 0 #f6dbd5;
 }
 
 .btn-flex {
   flex: 1;
 }
 
-/* ---------- 小标签 ---------- */
+/* ---------- 标签：小贴纸 ---------- */
 
 .chip {
   display: inline-flex;
   align-items: center;
-  height: 56rpx;
-  padding: 0 24rpx;
-  border-radius: 28rpx;
-  border: 2rpx solid #dfe8ce;
-  background: #f6f9ef;
-  color: #71806a;
+  height: 58rpx;
+  padding: 0 26rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid #e4e4df;
+  background: #ffffff;
+  color: #3d3d3d;
   font-size: 24rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 0 #ecece7;
 }
 
 .chip:active {
-  background: #e8efd9;
+  transform: translateY(3rpx);
+  box-shadow: 0 1rpx 0 #ecece7;
 }
 
 .tag {
   display: inline-block;
-  padding: 4rpx 16rpx;
+  padding: 5rpx 18rpx;
   margin-right: 10rpx;
-  border-radius: 12rpx;
+  border-radius: 999rpx;
   font-size: 21rpx;
+  font-weight: 700;
   line-height: 1.5;
 }
 
 .tag-work {
-  background: #e4edf6;
-  color: #4a6f96;
+  background: #e4efff;
+  color: #1e7bf5;
 }
 
 .tag-life {
-  background: #f7edd8;
-  color: #9a7433;
+  background: #fff3d6;
+  color: #b27a00;
 }
 
 .tag-health {
-  background: #e6f2e4;
-  color: #4f7a52;
+  background: #e4f8e6;
+  color: #12921c;
 }
 
 .tag-study {
-  background: #efe9f6;
-  color: #6f5595;
+  background: #efebff;
+  color: #5a3ff0;
 }
 
 .tag-misc {
-  background: #edf0e4;
-  color: #71806a;
+  background: #f1f1ee;
+  color: #6e6e6e;
 }
 
 .tag-important {
-  background: #f7ecdd;
-  color: #b06a45;
+  background: #ffe9e4;
+  color: #d9301a;
 }
 
 .tag-auto {
-  background: #eef2e2;
-  color: #90a084;
+  background: #f1f1ee;
+  color: #9a9a9a;
 }
 
-/* ---------- 小号按钮（放在最后，覆盖上面的高度） ---------- */
+/* ---------- 小号按钮（放最后，覆盖上面的高度） ---------- */
 
 .btn-sm {
   height: 66rpx;
-  padding: 0 24rpx;
+  padding: 0 26rpx;
   font-size: 25rpx;
-  border-radius: 20rpx;
+  border-radius: 999rpx;
   letter-spacing: 0;
-  box-shadow: 0 4rpx 0 rgba(120, 145, 100, 0.28);
+  box-shadow: 0 5rpx 0 #0b4fa8;
+}
+
+/* ---------- 装饰：彩色贴纸点 ---------- */
+
+.sticker-dot {
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background: #d6f73b;
+  border: 3rpx solid #111111;
+}
+
+.sticker-square {
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 6rpx;
+  background: #e8351c;
+  border: 3rpx solid #111111;
+  transform: rotate(-12deg);
+}
+
+.sticker-pop {
+  animation: pop 3.6s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-8rpx) rotate(4deg); }
+}
+
+.dot-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30rpx;
+}
+
+.dot-row .sticker-dot,
+.dot-row .sticker-square {
+  margin: 0 7rpx;
 }
 
 /* ---------- 日期选择（首页 / 拆解页共用） ---------- */
@@ -190,7 +236,8 @@ page {
 .date-label {
   flex: none;
   font-size: 24rpx;
-  color: #8d9b82;
+  color: #8f8f8f;
+  font-weight: 600;
   margin-right: 14rpx;
   padding-top: 12rpx;
 }
@@ -203,60 +250,21 @@ page {
 }
 
 .date-chip {
-  padding: 10rpx 26rpx;
+  padding: 10rpx 28rpx;
   margin: 0 12rpx 12rpx 0;
-  border-radius: 28rpx;
-  border: 2rpx solid #dfe8ce;
-  background: #f6f9ef;
-  color: #71806a;
+  border-radius: 999rpx;
+  border: 2rpx solid #e4e4df;
+  background: #ffffff;
+  color: #3d3d3d;
   font-size: 25rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 0 #ecece7;
 }
 
 .date-chip.is-on {
-  background: #86ab74;
-  border-color: #86ab74;
-  color: #fbfdf6;
-  font-weight: 600;
+  background: #1e7bf5;
+  border-color: #1e7bf5;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 4rpx 0 #0b4fa8;
 }
-
-/* ---------- 手绘小装饰：叶子 ---------- */
-
-.leaf {
-  width: 34rpx;
-  height: 34rpx;
-  background: #b9cf9e;
-  border-radius: 0 100% 0 100%;
-  transform: rotate(-38deg);
-  opacity: 0.85;
-}
-
-.leaf-sway {
-  animation: sway 4.5s ease-in-out infinite;
-}
-
-@keyframes sway {
-  0%, 100% { transform: rotate(-38deg); }
-  50% { transform: rotate(-26deg); }
-}
-
-/* 页脚的几片草 */
-.grass-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-top: 30rpx;
-  opacity: 0.75;
-}
-
-.grass-row .blade {
-  width: 4rpx;
-  margin: 0 7rpx;
-  background: #b9cf9e;
-  border-radius: 4rpx;
-}
-
-.grass-row .blade:nth-child(1) { height: 22rpx; }
-.grass-row .blade:nth-child(2) { height: 34rpx; }
-.grass-row .blade:nth-child(3) { height: 16rpx; }
-.grass-row .blade:nth-child(4) { height: 28rpx; }
-.grass-row .blade:nth-child(5) { height: 20rpx; }
