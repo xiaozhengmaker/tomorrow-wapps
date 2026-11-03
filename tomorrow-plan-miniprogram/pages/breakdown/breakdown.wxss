@@ -5,7 +5,7 @@
 .eyebrow {
   font-size: 21rpx;
   letter-spacing: 8rpx;
-  color: #c2c2c2;
+  color: #c7c7cc;
 }
 
 .title {
@@ -13,13 +13,13 @@
   font-size: 44rpx;
   font-weight: 700;
   line-height: 1.34;
-  color: #0e0e0e;
+  color: #0a0a0a;
 }
 
 .sub {
   margin-top: 10rpx;
   font-size: 25rpx;
-  color: #808080;
+  color: #8e8e93;
 }
 
 /* ---------- 输入 ---------- */
@@ -35,14 +35,14 @@
   min-height: 120rpx;
   padding: 20rpx;
   border-radius: 16rpx;
-  background: #f2f2ef;
+  background: #f2f2f7;
   font-size: 30rpx;
   line-height: 1.6;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .input-ph {
-  color: #cfcfcf;
+  color: #d1d1d6;
 }
 
 .input-card .btn-primary {
@@ -68,29 +68,29 @@
   flex: 1;
   font-size: 30rpx;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #111111;
   padding-right: 14rpx;
 }
 
 .result-badge {
   flex: none;
   font-size: 20rpx;
-  color: #1e7bf5;
-  background: #e6f0ff;
+  color: #0a84ff;
+  background: #e5f3ff;
   padding: 3rpx 12rpx;
   border-radius: 8rpx;
 }
 
 .result-badge.is-busy {
-  background: #f0f0ec;
-  color: #8f8f8f;
+  background: #f5f5f7;
+  color: #8e8e93;
 }
 
 .step {
   display: flex;
   align-items: flex-start;
   padding: 18rpx 0;
-  border-top: 1rpx dashed #e8e8e3;
+  border-top: 1rpx dashed #ebebf0;
 }
 
 .step-no {
@@ -98,7 +98,7 @@
   width: 44rpx;
   font-size: 24rpx;
   font-weight: 600;
-  color: #c4c4c4;
+  color: #c7c7cc;
   padding-top: 6rpx;
 }
 
@@ -111,11 +111,11 @@
   width: 100%;
   font-size: 30rpx;
   line-height: 1.5;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .step-ph {
-  color: #d4d4d4;
+  color: #d1d1d6;
 }
 
 .step-min {
@@ -123,9 +123,9 @@
   margin-top: 8rpx;
   padding: 3rpx 14rpx;
   border-radius: 20rpx;
-  background: #f0f0ec;
+  background: #f5f5f7;
   font-size: 22rpx;
-  color: #808080;
+  color: #8e8e93;
 }
 
 .step-del {
@@ -134,13 +134,13 @@
   padding-top: 6rpx;
   text-align: center;
   font-size: 24rpx;
-  color: #d8d8d3;
+  color: #d8d8dd;
 }
 
 .step-add {
   padding: 16rpx 0 4rpx 44rpx;
   font-size: 25rpx;
-  color: #1e7bf5;
+  color: #0a84ff;
 }
 
 .result-foot {
@@ -149,12 +149,12 @@
   justify-content: space-between;
   margin-top: 20rpx;
   padding-top: 20rpx;
-  border-top: 1rpx solid #e8e8e3;
+  border-top: 1rpx solid #ebebf0;
 }
 
 .total {
   font-size: 24rpx;
-  color: #8f8f8f;
+  color: #8e8e93;
 }
 
 .acts {
@@ -178,7 +178,7 @@
   margin-bottom: 14rpx;
   font-size: 21rpx;
   letter-spacing: 4rpx;
-  color: #c2c2c2;
+  color: #c7c7cc;
 }
 
 .hist {
@@ -196,7 +196,7 @@
 .hist-goal {
   display: block;
   font-size: 28rpx;
-  color: #1a1a1a;
+  color: #111111;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -206,18 +206,18 @@
   display: block;
   margin-top: 6rpx;
   font-size: 22rpx;
-  color: #9e9e9e;
+  color: #aeaeb2;
 }
 
 .hist-arrow {
   flex: none;
   font-size: 32rpx;
-  color: #d8d8d3;
+  color: #d8d8dd;
 }
 
 .history-tip {
   margin-top: 10rpx;
   text-align: center;
   font-size: 21rpx;
-  color: #d8d8d8;
+  color: #d8d8dd;
 }

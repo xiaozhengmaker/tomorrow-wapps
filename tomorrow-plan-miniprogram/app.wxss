@@ -1,132 +1,123 @@
-/* 全局：Sugar 那种贴纸拼贴感 —— 纯白面、高饱和色块、胶囊按钮、硬阴影 */
+/* 全局：Joi 那种极简规划器 —— 纯白、无阴影、淡彩胶囊、超粗字、虚线分隔 */
 
 page {
-  background-color: #f4f4f1;
-  color: #111111;
+  background-color: #ffffff;
+  color: #0a0a0a;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
     Helvetica, "Microsoft YaHei", sans-serif;
   font-size: 28rpx;
-  line-height: 1.55;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* 点阵底，像贴纸画布 */
 .page {
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 36rpx 32rpx 120rpx;
-  background-color: #f4f4f1;
-  background-image: radial-gradient(#dededa 1.5rpx, transparent 1.5rpx);
-  background-size: 36rpx 36rpx;
+  padding: 32rpx 40rpx 120rpx;
+  background-color: #ffffff;
 }
 
+/* 卡片是「一层极淡的边界」，不用阴影 —— Joi 里几乎没有投影 */
 .card {
   position: relative;
   box-sizing: border-box;
   background: #ffffff;
-  border: 2rpx solid #e4e4df;
-  border-radius: 28rpx;
-  box-shadow: 0 6rpx 0 #ecece7, 0 12rpx 26rpx rgba(17, 17, 17, 0.05);
+  border: 2rpx solid #f2f2f7;
+  border-radius: 24rpx;
 }
 
-/* ---------- 按钮：彩色贴纸胶囊 ---------- */
+/* ---------- 按钮：平色胶囊，没有厚度 ---------- */
 
 .btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  height: 96rpx;
+  height: 100rpx;
   border-radius: 999rpx;
-  background: #1e7bf5;
+  background: #0a84ff;
   color: #ffffff;
   font-size: 32rpx;
   font-weight: 800;
-  letter-spacing: 1rpx;
-  box-shadow: 0 8rpx 0 #0b4fa8, 0 14rpx 24rpx rgba(30, 123, 245, 0.22);
+  letter-spacing: 0.5rpx;
+  transition: transform .16s cubic-bezier(.2,.8,.3,1), opacity .16s;
 }
 
 .btn-primary:active {
-  transform: translateY(6rpx);
-  box-shadow: 0 2rpx 0 #0b4fa8, 0 8rpx 16rpx rgba(30, 123, 245, 0.2);
+  transform: scale(0.972);
+  opacity: 0.92;
 }
 
 .btn-primary.is-disabled {
-  background: #d9d9d4;
-  color: #ffffff;
-  box-shadow: 0 8rpx 0 #c9c9c4;
+  background: #e5e5ea;
+  color: #aeaeb2;
+  transform: none;
 }
 
 .btn-ghost {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 84rpx;
-  padding: 0 34rpx;
+  height: 88rpx;
+  padding: 0 36rpx;
   border-radius: 999rpx;
-  border: 2rpx solid #e4e4df;
-  background: #ffffff;
-  color: #111111;
+  background: #f2f2f7;
+  color: #1c1c1e;
   font-size: 28rpx;
   font-weight: 600;
-  box-shadow: 0 6rpx 0 #e8e8e3;
+  transition: transform .16s cubic-bezier(.2,.8,.3,1), background .16s;
 }
 
 .btn-ghost:active {
-  transform: translateY(5rpx);
-  box-shadow: 0 1rpx 0 #e8e8e3;
-  background: #fafaf8;
+  transform: scale(0.972);
+  background: #e8e8ed;
 }
 
 .btn-ghost-quiet {
-  color: #8f8f8f;
-  border-color: #ecece7;
-  box-shadow: 0 6rpx 0 #f0f0ec;
+  background: #ffffff;
+  color: #8e8e93;
+  border: 2rpx solid #f2f2f7;
 }
 
 .btn-danger {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 86rpx;
+  height: 88rpx;
   padding: 0 40rpx;
   border-radius: 999rpx;
-  border: 2rpx solid #f0c9c2;
-  background: #fff1ec;
-  color: #d9301a;
+  background: #ffede6;
+  color: #ff3b30;
   font-size: 29rpx;
   font-weight: 700;
-  box-shadow: 0 6rpx 0 #f6dbd5;
+  transition: transform .16s cubic-bezier(.2,.8,.3,1);
 }
 
 .btn-danger:active {
-  transform: translateY(5rpx);
-  box-shadow: 0 1rpx 0 #f6dbd5;
+  transform: scale(0.972);
 }
 
 .btn-flex {
   flex: 1;
 }
 
-/* ---------- 标签：小贴纸 ---------- */
+/* ---------- 标签：淡彩胶囊，无描边 ---------- */
 
 .chip {
   display: inline-flex;
   align-items: center;
   height: 58rpx;
-  padding: 0 26rpx;
+  padding: 0 28rpx;
   border-radius: 999rpx;
-  border: 2rpx solid #e4e4df;
-  background: #ffffff;
-  color: #3d3d3d;
+  background: #f2f2f7;
+  color: #3a3a3c;
   font-size: 24rpx;
   font-weight: 600;
-  box-shadow: 0 4rpx 0 #ecece7;
+  transition: transform .16s cubic-bezier(.2,.8,.3,1);
 }
 
 .chip:active {
-  transform: translateY(3rpx);
-  box-shadow: 0 1rpx 0 #ecece7;
+  transform: scale(0.96);
 }
 
 .tag {
@@ -140,89 +131,84 @@ page {
 }
 
 .tag-work {
-  background: #e4efff;
-  color: #1e7bf5;
+  background: #e5f3ff;
+  color: #0a84ff;
 }
 
 .tag-life {
-  background: #fff3d6;
-  color: #b27a00;
+  background: #fff5d6;
+  color: #c77700;
 }
 
 .tag-health {
-  background: #e4f8e6;
-  color: #12921c;
+  background: #e7f9ec;
+  color: #34c759;
 }
 
 .tag-study {
-  background: #efebff;
-  color: #5a3ff0;
+  background: #eeeaff;
+  color: #5e5ce6;
 }
 
 .tag-misc {
-  background: #f1f1ee;
-  color: #6e6e6e;
+  background: #f2f2f7;
+  color: #8e8e93;
 }
 
 .tag-important {
-  background: #ffe9e4;
-  color: #d9301a;
+  background: #ffede6;
+  color: #ff5f2e;
 }
 
 .tag-auto {
-  background: #f1f1ee;
-  color: #9a9a9a;
+  background: #f2f2f7;
+  color: #aeaeb2;
 }
 
 /* ---------- 小号按钮（放最后，覆盖上面的高度） ---------- */
 
 .btn-sm {
-  height: 66rpx;
-  padding: 0 26rpx;
+  height: 68rpx;
+  padding: 0 28rpx;
   font-size: 25rpx;
   border-radius: 999rpx;
   letter-spacing: 0;
-  box-shadow: 0 5rpx 0 #0b4fa8;
 }
 
-/* ---------- 装饰：彩色贴纸点 ---------- */
+/* ---------- 动效：入场依次升起 ---------- */
 
-.sticker-dot {
-  width: 26rpx;
-  height: 26rpx;
-  border-radius: 50%;
-  background: #d6f73b;
-  border: 3rpx solid #111111;
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.sticker-square {
-  width: 26rpx;
-  height: 26rpx;
-  border-radius: 6rpx;
-  background: #e8351c;
-  border: 3rpx solid #111111;
-  transform: rotate(-12deg);
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  70% { transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-.sticker-pop {
-  animation: pop 3.6s ease-in-out infinite;
+.stagger > view {
+  animation: rise 0.36s cubic-bezier(0.2, 0.8, 0.3, 1) both;
 }
 
-@keyframes pop {
-  0%, 100% { transform: translateY(0) rotate(-8deg); }
-  50% { transform: translateY(-8rpx) rotate(4deg); }
+.stagger > view:nth-child(1) { animation-delay: 0.02s; }
+.stagger > view:nth-child(2) { animation-delay: 0.06s; }
+.stagger > view:nth-child(3) { animation-delay: 0.10s; }
+.stagger > view:nth-child(4) { animation-delay: 0.14s; }
+.stagger > view:nth-child(5) { animation-delay: 0.18s; }
+.stagger > view:nth-child(6) { animation-delay: 0.22s; }
+.stagger > view:nth-child(7) { animation-delay: 0.26s; }
+.stagger > view:nth-child(8) { animation-delay: 0.30s; }
+
+.pop-in {
+  animation: popIn 0.34s cubic-bezier(0.2, 0.8, 0.3, 1) both;
 }
 
-.dot-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 30rpx;
-}
+/* ---------- 虚线分隔（Joi 列表的签名） ---------- */
 
-.dot-row .sticker-dot,
-.dot-row .sticker-square {
-  margin: 0 7rpx;
+.dash {
+  border-bottom: 2rpx dashed #ececf1;
 }
 
 /* ---------- 日期选择（首页 / 拆解页共用） ---------- */
@@ -230,13 +216,13 @@ page {
 .date-row {
   display: flex;
   align-items: flex-start;
-  padding: 0 6rpx 14rpx;
+  padding: 0 0 16rpx;
 }
 
 .date-label {
   flex: none;
   font-size: 24rpx;
-  color: #8f8f8f;
+  color: #8e8e93;
   font-weight: 600;
   margin-right: 14rpx;
   padding-top: 12rpx;
@@ -253,18 +239,19 @@ page {
   padding: 10rpx 28rpx;
   margin: 0 12rpx 12rpx 0;
   border-radius: 999rpx;
-  border: 2rpx solid #e4e4df;
-  background: #ffffff;
-  color: #3d3d3d;
+  background: #f2f2f7;
+  color: #3a3a3c;
   font-size: 25rpx;
   font-weight: 600;
-  box-shadow: 0 4rpx 0 #ecece7;
+  transition: transform .16s cubic-bezier(.2,.8,.3,1), background .18s, color .18s;
+}
+
+.date-chip:active {
+  transform: scale(0.95);
 }
 
 .date-chip.is-on {
-  background: #1e7bf5;
-  border-color: #1e7bf5;
+  background: #0a84ff;
   color: #ffffff;
   font-weight: 800;
-  box-shadow: 0 4rpx 0 #0b4fa8;
 }

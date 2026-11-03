@@ -219,7 +219,7 @@ Page({
       title: '删掉这一项？',
       content: edit.title,
       confirmText: '删除',
-      confirmColor: '#0b5fd0',
+      confirmColor: '#0060df',
       success: function (res) {
         if (!res.confirm) return
         store.removeItem(self.data.date, edit.id)
@@ -237,7 +237,7 @@ Page({
       title: '清空这一天的清单？',
       content: '清空后可以回首页重新生成。',
       confirmText: '清空',
-      confirmColor: '#0b5fd0',
+      confirmColor: '#0060df',
       success: function (res) {
         if (!res.confirm) return
         store.clearPlan(self.data.date)

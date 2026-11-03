@@ -20,7 +20,7 @@
     <view class="btn-primary empty-btn" bindtap="goAdd">去写点东西</view>
   </view>
 
-  <view class="timeline" wx:else>
+  <view class="timeline stagger" wx:else>
     <view
       class="row {{item.done ? 'row-done' : ''}} {{item.late ? 'row-late' : ''}}"
       wx:for="{{items}}"
