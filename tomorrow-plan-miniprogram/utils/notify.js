@@ -13,10 +13,27 @@ var cloud = require('./cloud.js')
  * 弹授权框，成功后到云端登记一条额度。
  * @return {Promise<{ok:boolean, registered:boolean, left?:number, reason?:string}>}
  */
+/** 开发者工具里微信不支持订阅消息，提前拦一下，别让人以为是自己配错了 */
+function isDevtools() {
+  try {
+    var info = (typeof wx.getDeviceInfo === 'function')
+      ? wx.getDeviceInfo()
+      : wx.getSystemInfoSync()
+    return !!info && info.platform === 'devtools'
+  } catch (e) {
+    return false
+  }
+}
+
 function askAndRegister() {
   return new Promise(function (resolve) {
     if (typeof wx === 'undefined' || !wx.requestSubscribeMessage) {
       resolve({ ok: false, registered: false, reason: 'unsupported' })
+      return
+    }
+
+    if (isDevtools()) {
+      resolve({ ok: false, registered: false, reason: 'devtools' })
       return
     }
 
@@ -62,5 +79,6 @@ function askAndRegister() {
 
 module.exports = {
   askAndRegister: askAndRegister,
+  isDevtools: isDevtools,
   hasTemplate: function () { return cloud.hasTemplate() }
 }

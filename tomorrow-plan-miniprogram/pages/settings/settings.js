@@ -45,6 +45,13 @@ Page({
         wx.showToast({ title: '授权了，但云端没登记上', icon: 'none' })
       } else if (res.reason === 'reject') {
         wx.showToast({ title: '你拒绝了，今晚不发', icon: 'none' })
+      } else if (res.reason === 'devtools') {
+        wx.showModal({
+          title: '开发者工具里用不了',
+          content: '订阅消息只在真机生效。点工具栏「预览」，用手机扫码，在手机上点「开启今晚的提醒」。',
+          showCancel: false,
+          confirmText: '知道了'
+        })
       } else {
         wx.showToast({ title: '没开成功，稍后再试', icon: 'none' })
       }
