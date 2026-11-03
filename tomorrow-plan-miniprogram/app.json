@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/plan/plan",
+    "pages/breakdown/breakdown",
+    "pages/review/review",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f4f0e7",
+    "backgroundColorTop": "#f4f0e7",
+    "backgroundColorBottom": "#f4f0e7",
+    "navigationBarBackgroundColor": "#f4f0e7",
+    "navigationBarTitleText": "明日清单",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a99d89",
+    "selectedColor": "#b1492f",
+    "backgroundColor": "#fffdf7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "清单"
+      },
+      {
+        "pagePath": "pages/breakdown/breakdown",
+        "text": "拆解"
+      },
+      {
+        "pagePath": "pages/review/review",
+        "text": "复盘"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

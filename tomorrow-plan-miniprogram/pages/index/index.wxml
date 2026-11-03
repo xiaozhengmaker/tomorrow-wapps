@@ -1,0 +1,114 @@
+<view class="page">
+
+  <view class="hero">
+    <view class="hero-eyebrow">TOMORROW</view>
+    <view class="hero-title">随手写下来</view>
+    <view class="hero-title hero-title-2">明天照着做</view>
+    <view class="hero-sub">把明天大概要做的事丢进来，我拆成一项一项，排好时间。</view>
+  </view>
+
+  <view
+    class="card plan-card"
+    wx:for="{{cards}}"
+    wx:key="date"
+    data-date="{{item.date}}"
+    bindtap="gotoPlan"
+  >
+    <view class="plan-head">
+      <view class="plan-head-left">
+        <text class="plan-badge">{{item.badge}}</text>
+        <text class="plan-weekday">{{item.weekday}}</text>
+      </view>
+      <text class="plan-ratio">{{item.doneCount}}/{{item.total}}</text>
+    </view>
+
+    <view class="plan-bar">
+      <view class="plan-bar-fill" style="width:{{item.percent}}%"></view>
+    </view>
+
+    <view class="mini-row" wx:for="{{item.preview}}" wx:for-item="row" wx:key="id">
+      <text class="mini-time">{{row.time}}</text>
+      <text class="mini-title {{row.done ? 'mini-done' : ''}}">{{row.title}}</text>
+    </view>
+
+    <view class="plan-foot">
+      <text class="plan-more" wx:if="{{item.total > 3}}">还有 {{item.total - 3}} 项</text>
+      <text class="plan-more" wx:else></text>
+      <text class="plan-link">查看全部 ›</text>
+    </view>
+  </view>
+
+  <view class="card nudge" wx:if="{{needReview}}" bindtap="goReview">
+    <view class="nudge-main">
+      <view class="nudge-title">今天还没复盘</view>
+      <view class="nudge-sub">{{remindTime}} 了，花两分钟写两句，看看今天推进到哪了</view>
+    </view>
+    <text class="nudge-arrow">›</text>
+  </view>
+
+  <view class="date-row">
+    <text class="date-label">排到</text>
+    <view class="date-chips">
+      <view
+        class="date-chip {{target === item.date ? 'is-on' : ''}}"
+        wx:for="{{quickDates}}"
+        wx:key="key"
+        data-date="{{item.date}}"
+        bindtap="pickDate"
+      >{{item.label}}</view>
+      <picker mode="date" value="{{target}}" bindchange="onDateChange">
+        <view class="date-chip {{isCustomDate ? 'is-on' : ''}}">{{isCustomDate ? targetLabel : '选日期'}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="card input-card">
+    <view class="input-head">
+      <text class="input-title">{{targetLabel}}要做什么？</text>
+      <text class="input-hint">一句一行</text>
+    </view>
+
+    <textarea
+      class="input-area"
+      value="{{draft}}"
+      placeholder="明天上午九点跟客户开会，大概一小时&#10;下午把周报写完&#10;晚上八点去健身"
+      placeholder-class="input-ph"
+      maxlength="600"
+      auto-height
+      show-confirm-bar="{{false}}"
+      cursor-spacing="80"
+      bindinput="onInput"
+    ></textarea>
+
+    <view class="input-tools">
+      <view class="chip" bindtap="fillSample">填入示例</view>
+      <view class="chip chip-gap" wx:if="{{draft}}" bindtap="clearInput">清空</view>
+      <text class="input-count">{{draft.length}}/600</text>
+    </view>
+  </view>
+
+  <view class="btn-primary {{canSubmit ? '' : 'is-disabled'}}" bindtap="generate">
+    排进{{targetLabel}}
+  </view>
+
+  <view class="tips">
+    <view class="tips-title">这样说，我就能听懂</view>
+    <view class="tips-row">
+      <text class="tips-k">「下午3点 面试」</text>
+      <text class="tips-v">15:00 · 工作</text>
+    </view>
+    <view class="tips-row">
+      <text class="tips-k">「晚上八点 健身」</text>
+      <text class="tips-v">20:00 · 健康</text>
+    </view>
+    <view class="tips-row">
+      <text class="tips-k">「记得交电费」</text>
+      <text class="tips-v">自动排空档 · 生活</text>
+    </view>
+    <view class="tips-row">
+      <text class="tips-k">「买菜，写周报，健身」</text>
+      <text class="tips-v">拆成 3 项</text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,144 @@
+<view class="page">
+
+  <view class="head">
+    <view class="head-top">
+      <text class="head-date">{{friendly}}</text>
+      <text class="head-sep">·</text>
+      <text class="head-weekday">{{weekday}}</text>
+    </view>
+    <view class="head-title">{{headTitle}}</view>
+    <view class="head-sub" wx:if="{{total > 0}}">共 {{total}} 项 · 已完成 {{doneCount}} 项</view>
+    <view class="bar" wx:if="{{total > 0}}">
+      <view class="bar-fill" style="width:{{percent}}%"></view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{isEmpty}}">
+    <view class="empty-mark">☾</view>
+    <view class="empty-title">这一天还是空的</view>
+    <view class="empty-sub">回首页随手写两句，我来排时间</view>
+    <view class="btn-primary empty-btn" bindtap="goAdd">去写点东西</view>
+  </view>
+
+  <view class="timeline" wx:else>
+    <view
+      class="row {{item.done ? 'row-done' : ''}} {{item.late ? 'row-late' : ''}}"
+      wx:for="{{items}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="openEdit"
+    >
+      <view class="row-time">
+        <text class="row-clock">{{item.time}}</text>
+        <text class="row-dur">{{item.durationText}}</text>
+      </view>
+
+      <view class="row-rail">
+        <view class="row-line"></view>
+        <view class="row-dot"></view>
+      </view>
+
+      <view class="row-body card">
+        <view class="row-main">
+          <text class="row-title">{{item.title}}</text>
+          <view
+            class="row-check {{item.done ? 'is-checked' : ''}}"
+            data-id="{{item.id}}"
+            catchtap="toggle"
+          >
+            <text class="row-tick" wx:if="{{item.done}}">✓</text>
+          </view>
+        </view>
+
+        <view class="row-progress" wx:if="{{item.progress}}">{{item.progress}}</view>
+
+        <view class="row-tags">
+          <text class="tag tag-{{item.tagKey}}">{{item.tag}}</text>
+          <text class="tag st-{{item.statusKey}}" wx:if="{{item.statusLabel}}">{{item.statusLabel}}</text>
+          <text class="tag tag-important" wx:if="{{item.important}}">重要</text>
+          <text class="tag tag-auto" wx:if="{{item.assigned}}">自动排的</text>
+          <text class="tag tag-late" wx:if="{{item.late}}">已过点</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="foot" wx:if="{{!isEmpty}}">
+    <view class="btn-ghost" bindtap="goAdd">＋ 再加几件</view>
+    <view class="btn-ghost foot-gap" wx:if="{{remaining > 0}}" bindtap="markAll">全部完成</view>
+    <view class="btn-ghost btn-ghost-quiet foot-gap" bindtap="clearDay">清空</view>
+  </view>
+
+  <view class="hint" wx:if="{{!isEmpty}}">点一下某一项可以改标题、改时间</view>
+
+  <view class="mask" wx:if="{{editing}}" bindtap="closeEdit"></view>
+
+  <view class="sheet" wx:if="{{editing}}">
+    <view class="sheet-bar"></view>
+    <view class="sheet-title">调整这一项</view>
+
+    <view class="field">
+      <text class="field-label">做什么</text>
+      <input
+        class="field-input"
+        value="{{edit.title}}"
+        maxlength="40"
+        placeholder="写点具体的事"
+        placeholder-class="field-ph"
+        bindinput="onEditTitle"
+      />
+    </view>
+
+    <view class="field">
+      <text class="field-label">几点</text>
+      <picker mode="time" value="{{edit.time}}" bindchange="onEditTime">
+        <view class="field-input field-picker">
+          <text class="field-time">{{edit.time}}</text>
+          <text class="field-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="field field-column">
+      <text class="field-label field-label-top">分类</text>
+      <view class="tag-picker">
+        <view
+          class="tag-opt {{edit.tag === t ? 'is-active' : ''}}"
+          wx:for="{{tags}}"
+          wx:for-item="t"
+          wx:key="*this"
+          data-tag="{{t}}"
+          bindtap="onEditTag"
+        >{{t}}</view>
+      </view>
+    </view>
+
+    <view class="field field-column">
+      <text class="field-label field-label-top">进度</text>
+      <view class="prog-chips">
+        <text
+          class="prog-chip"
+          wx:for="{{progressWords}}"
+          wx:key="*this"
+          data-w="{{item}}"
+          bindtap="pickProgress"
+        >{{item}}</text>
+      </view>
+      <textarea
+        class="prog-input"
+        value="{{edit.progress}}"
+        maxlength="60"
+        auto-height
+        placeholder="写到哪儿了？比如「做了一半，等数据」"
+        placeholder-class="field-ph"
+        bindinput="onEditProgress"
+      ></textarea>
+    </view>
+
+    <view class="sheet-actions">
+      <view class="btn-danger" bindtap="onDelete">删除</view>
+      <view class="btn-primary btn-flex" bindtap="saveEdit">保存</view>
+    </view>
+  </view>
+
+</view>

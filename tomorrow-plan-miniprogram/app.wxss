@@ -1,0 +1,262 @@
+/* 全局：旅行青蛙那种手绘纸感 —— 米绿底、圆润、软阴影、按钮有厚度 */
+
+page {
+  background-color: #eef2e2;
+  color: #2f3d29;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
+    Helvetica, "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 36rpx 32rpx 120rpx;
+  background-image:
+    radial-gradient(120% 38% at 50% 0%, #f9fbf2 0%, rgba(249, 251, 242, 0) 70%),
+    radial-gradient(90% 26% at 50% 100%, #e4eed3 0%, rgba(228, 238, 211, 0) 72%);
+}
+
+.card {
+  position: relative;
+  box-sizing: border-box;
+  background: #fbfcf3;
+  border: 2rpx solid #dde6cf;
+  border-radius: 34rpx;
+  box-shadow: 0 10rpx 28rpx rgba(86, 116, 66, 0.09);
+}
+
+/* ---------- 按钮：像一块有厚度的纸片 ---------- */
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 98rpx;
+  border-radius: 30rpx;
+  background: linear-gradient(180deg, #86ab74 0%, #648a55 100%);
+  color: #fbfdf6;
+  font-size: 31rpx;
+  font-weight: 600;
+  letter-spacing: 3rpx;
+  box-shadow: 0 8rpx 0 #567749, 0 16rpx 28rpx rgba(86, 116, 66, 0.24);
+}
+
+.btn-primary:active {
+  transform: translateY(6rpx);
+  box-shadow: 0 2rpx 0 #567749, 0 8rpx 16rpx rgba(86, 116, 66, 0.2);
+}
+
+.btn-primary.is-disabled {
+  background: #dfe8ce;
+  color: #9caa90;
+  box-shadow: 0 8rpx 0 #d2ddbf;
+}
+
+.btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84rpx;
+  padding: 0 30rpx;
+  border-radius: 26rpx;
+  border: 2rpx solid #d9e3c9;
+  background: #f7faf0;
+  color: #62705a;
+  font-size: 28rpx;
+  box-shadow: 0 5rpx 0 #e2ead4;
+}
+
+.btn-ghost:active {
+  transform: translateY(4rpx);
+  box-shadow: 0 1rpx 0 #e2ead4;
+  background: #eef3e4;
+}
+
+.btn-ghost-quiet {
+  color: #94a189;
+  border-color: #e4ebd7;
+  background: #f6f9ef;
+  box-shadow: 0 5rpx 0 #e9efdd;
+}
+
+.btn-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86rpx;
+  padding: 0 40rpx;
+  border-radius: 26rpx;
+  border: 2rpx solid #e2cdb8;
+  background: #fbf2e6;
+  color: #b06a45;
+  font-size: 29rpx;
+  box-shadow: 0 5rpx 0 #ecdfcc;
+}
+
+.btn-danger:active {
+  transform: translateY(4rpx);
+  box-shadow: 0 1rpx 0 #ecdfcc;
+}
+
+.btn-flex {
+  flex: 1;
+}
+
+/* ---------- 小标签 ---------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 56rpx;
+  padding: 0 24rpx;
+  border-radius: 28rpx;
+  border: 2rpx solid #dfe8ce;
+  background: #f6f9ef;
+  color: #71806a;
+  font-size: 24rpx;
+}
+
+.chip:active {
+  background: #e8efd9;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4rpx 16rpx;
+  margin-right: 10rpx;
+  border-radius: 12rpx;
+  font-size: 21rpx;
+  line-height: 1.5;
+}
+
+.tag-work {
+  background: #e4edf6;
+  color: #4a6f96;
+}
+
+.tag-life {
+  background: #f7edd8;
+  color: #9a7433;
+}
+
+.tag-health {
+  background: #e6f2e4;
+  color: #4f7a52;
+}
+
+.tag-study {
+  background: #efe9f6;
+  color: #6f5595;
+}
+
+.tag-misc {
+  background: #edf0e4;
+  color: #71806a;
+}
+
+.tag-important {
+  background: #f7ecdd;
+  color: #b06a45;
+}
+
+.tag-auto {
+  background: #eef2e2;
+  color: #90a084;
+}
+
+/* ---------- 小号按钮（放在最后，覆盖上面的高度） ---------- */
+
+.btn-sm {
+  height: 66rpx;
+  padding: 0 24rpx;
+  font-size: 25rpx;
+  border-radius: 20rpx;
+  letter-spacing: 0;
+  box-shadow: 0 4rpx 0 rgba(120, 145, 100, 0.28);
+}
+
+/* ---------- 日期选择（首页 / 拆解页共用） ---------- */
+
+.date-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 6rpx 14rpx;
+}
+
+.date-label {
+  flex: none;
+  font-size: 24rpx;
+  color: #8d9b82;
+  margin-right: 14rpx;
+  padding-top: 12rpx;
+}
+
+.date-chips {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.date-chip {
+  padding: 10rpx 26rpx;
+  margin: 0 12rpx 12rpx 0;
+  border-radius: 28rpx;
+  border: 2rpx solid #dfe8ce;
+  background: #f6f9ef;
+  color: #71806a;
+  font-size: 25rpx;
+}
+
+.date-chip.is-on {
+  background: #86ab74;
+  border-color: #86ab74;
+  color: #fbfdf6;
+  font-weight: 600;
+}
+
+/* ---------- 手绘小装饰：叶子 ---------- */
+
+.leaf {
+  width: 34rpx;
+  height: 34rpx;
+  background: #b9cf9e;
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-38deg);
+  opacity: 0.85;
+}
+
+.leaf-sway {
+  animation: sway 4.5s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-38deg); }
+  50% { transform: rotate(-26deg); }
+}
+
+/* 页脚的几片草 */
+.grass-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 30rpx;
+  opacity: 0.75;
+}
+
+.grass-row .blade {
+  width: 4rpx;
+  margin: 0 7rpx;
+  background: #b9cf9e;
+  border-radius: 4rpx;
+}
+
+.grass-row .blade:nth-child(1) { height: 22rpx; }
+.grass-row .blade:nth-child(2) { height: 34rpx; }
+.grass-row .blade:nth-child(3) { height: 16rpx; }
+.grass-row .blade:nth-child(4) { height: 28rpx; }
+.grass-row .blade:nth-child(5) { height: 20rpx; }

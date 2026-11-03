@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "openapi": []
+  },
+  "triggers": [
+    {
+      "name": "retryDiary",
+      "type": "timer",
+      "config": "0 40 23 * * * *"
+    }
+  ]
+}

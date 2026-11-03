@@ -1,0 +1,302 @@
+.head {
+  padding: 8rpx 8rpx 30rpx;
+}
+
+.head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #93a088;
+}
+
+.gear {
+  color: #6f9461;
+  font-size: 24rpx;
+}
+
+.eyebrow {
+  font-size: 21rpx;
+  letter-spacing: 5rpx;
+  color: #a9b79b;
+}
+
+.title {
+  margin-top: 10rpx;
+  font-size: 46rpx;
+  font-weight: 700;
+  line-height: 1.32;
+  color: #2b3a26;
+}
+
+.sub {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #7d8a72;
+}
+
+/* ---------- 完成率 ---------- */
+
+.stat {
+  padding: 26rpx 28rpx 22rpx;
+  margin-bottom: 22rpx;
+}
+
+.stat-num {
+  font-size: 72rpx;
+  font-weight: 700;
+  line-height: 1;
+  color: #33422d;
+  letter-spacing: -2rpx;
+}
+
+.stat-unit {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #8d9b82;
+  margin-left: 6rpx;
+}
+
+.stat-bar {
+  height: 10rpx;
+  border-radius: 5rpx;
+  background: #e3ebd4;
+  margin: 18rpx 0 14rpx;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 5rpx;
+  background: linear-gradient(90deg, #86ab74, #5b7f4e);
+  transition: width 0.3s ease;
+}
+
+.stat-hint {
+  font-size: 22rpx;
+  color: #a5b39a;
+}
+
+/* ---------- 输入 ---------- */
+
+.input-card {
+  padding: 26rpx;
+  margin-bottom: 22rpx;
+}
+
+.label {
+  font-size: 26rpx;
+  color: #7d8a72;
+  margin-bottom: 14rpx;
+}
+
+.input-area {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 160rpx;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  background: #f4f7ea;
+  font-size: 29rpx;
+  line-height: 1.7;
+  color: #33422d;
+}
+
+.input-ph {
+  color: #b3c0a6;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.score-label {
+  font-size: 25rpx;
+  color: #7d8a72;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 34rpx;
+  color: #c9d5b8;
+  padding: 0 6rpx;
+  line-height: 1;
+}
+
+.star.is-on {
+  color: #5b7f4e;
+}
+
+/* ---------- 评估结果 ---------- */
+
+.result {
+  margin-top: 24rpx;
+  padding: 26rpx;
+}
+
+.result-title {
+  font-size: 21rpx;
+  letter-spacing: 4rpx;
+  color: #a9b79b;
+  margin-bottom: 16rpx;
+}
+
+.line {
+  font-size: 28rpx;
+  line-height: 1.85;
+  color: #3f4d38;
+  padding: 6rpx 0;
+  border-bottom: 1rpx dashed #eaf0de;
+}
+
+.line:last-child {
+  border-bottom: 0;
+}
+
+/* ---------- 同步日记 ---------- */
+
+.sync {
+  display: flex;
+  align-items: center;
+  padding: 22rpx 26rpx;
+  margin-top: 22rpx;
+  background: #f4f7ea;
+}
+
+.sync:active {
+  background: #e9efdb;
+}
+
+.sync-main {
+  flex: 1;
+}
+
+.sync-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #33422d;
+}
+
+.sync-sub {
+  display: block;
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #94a189;
+}
+
+.sync-arrow {
+  flex: none;
+  font-size: 32rpx;
+  color: #bfccab;
+}
+
+/* ---------- 趋势 ---------- */
+
+.trend {
+  padding: 24rpx 26rpx 18rpx;
+  margin-top: 24rpx;
+}
+
+.trend-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18rpx;
+}
+
+.trend-title {
+  font-size: 21rpx;
+  letter-spacing: 4rpx;
+  color: #a9b79b;
+}
+
+.trend-avg {
+  font-size: 24rpx;
+  color: #86ab74;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-track {
+  height: 120rpx;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 26rpx;
+  border-radius: 6rpx;
+  background: #e7edda;
+}
+
+.bar.is-on {
+  background: linear-gradient(180deg, #86ab74 0%, #5b7f4e 100%);
+}
+
+.bar-label {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #94a189;
+}
+
+/* ---------- 历史 ---------- */
+
+.history {
+  margin-top: 36rpx;
+}
+
+.history-title {
+  padding-left: 6rpx;
+  margin-bottom: 14rpx;
+  font-size: 21rpx;
+  letter-spacing: 4rpx;
+  color: #a9b79b;
+}
+
+.hist {
+  padding: 20rpx 26rpx;
+  margin-bottom: 14rpx;
+}
+
+.hist-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hist-date {
+  font-size: 26rpx;
+  color: #33422d;
+  font-weight: 600;
+}
+
+.hist-rate {
+  font-size: 24rpx;
+  color: #86ab74;
+}
+
+.hist-ex {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: #7d8a72;
+}

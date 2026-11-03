@@ -1,0 +1,253 @@
+.hero {
+  padding: 6rpx 6rpx 36rpx;
+}
+
+.hero-eyebrow {
+  font-size: 21rpx;
+  letter-spacing: 8rpx;
+  color: #a9b79b;
+  padding-left: 4rpx;
+}
+
+.hero-title {
+  font-size: 60rpx;
+  font-weight: 700;
+  line-height: 1.26;
+  letter-spacing: 1rpx;
+  color: #2b3a26;
+}
+
+.hero-title-2 {
+  color: #6f9461;
+}
+
+.hero-sub {
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  color: #7d8a72;
+  line-height: 1.6;
+  max-width: 560rpx;
+}
+
+/* ---------- 已有的清单卡片 ---------- */
+
+.plan-card {
+  padding: 24rpx 26rpx 18rpx;
+  margin-bottom: 22rpx;
+}
+
+.plan-card:active {
+  background: #f8fbee;
+}
+
+.plan-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plan-head-left {
+  display: flex;
+  align-items: center;
+}
+
+.plan-badge {
+  font-size: 23rpx;
+  font-weight: 600;
+  color: #6f9461;
+  background: #eaf1de;
+  padding: 3rpx 14rpx;
+  border-radius: 8rpx;
+  margin-right: 14rpx;
+}
+
+.plan-weekday {
+  font-size: 24rpx;
+  color: #8d9b82;
+}
+
+.plan-ratio {
+  font-size: 24rpx;
+  color: #8d9b82;
+  letter-spacing: 1rpx;
+}
+
+.plan-bar {
+  height: 8rpx;
+  border-radius: 4rpx;
+  background: #e3ebd4;
+  margin: 18rpx 0 6rpx;
+  overflow: hidden;
+}
+
+.plan-bar-fill {
+  height: 100%;
+  border-radius: 4rpx;
+  background: linear-gradient(90deg, #86ab74, #5b7f4e);
+  transition: width 0.3s ease;
+}
+
+.mini-row {
+  display: flex;
+  align-items: center;
+  padding: 11rpx 0;
+  border-bottom: 1rpx dashed #e9efdd;
+}
+
+.mini-time {
+  flex: none;
+  width: 92rpx;
+  font-size: 24rpx;
+  color: #94a189;
+}
+
+.mini-title {
+  flex: 1;
+  font-size: 27rpx;
+  color: #3a4a33;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mini-done {
+  color: #a9b69d;
+  text-decoration: line-through;
+}
+
+.plan-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14rpx;
+}
+
+.plan-more {
+  font-size: 23rpx;
+  color: #a5b39a;
+}
+
+.plan-link {
+  font-size: 23rpx;
+  color: #6f9461;
+}
+
+/* ---------- 复盘提醒 ---------- */
+
+.nudge {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 26rpx;
+  margin-bottom: 22rpx;
+  background: #fdf6e8;
+  border-color: #e6efd3;
+}
+
+.nudge-main {
+  flex: 1;
+}
+
+.nudge-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #7d6a33;
+}
+
+.nudge-sub {
+  margin-top: 4rpx;
+  font-size: 23rpx;
+  color: #8f9a6a;
+}
+
+.nudge-arrow {
+  flex: none;
+  font-size: 34rpx;
+  color: #b9c6a2;
+}
+
+/* ---------- 输入区 ---------- */
+.input-card {
+  padding: 26rpx 26rpx 20rpx;
+  margin-bottom: 24rpx;
+}
+
+.input-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.input-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #33422d;
+}
+
+.input-hint {
+  font-size: 22rpx;
+  color: #94a189;
+}
+
+.input-area {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 220rpx;
+  padding: 22rpx;
+  border-radius: 16rpx;
+  background: #f4f7ea;
+  font-size: 29rpx;
+  line-height: 1.72;
+  color: #33422d;
+}
+
+.input-ph {
+  color: #b3c0a6;
+  line-height: 1.72;
+}
+
+.input-tools {
+  display: flex;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.chip-gap {
+  margin-left: 14rpx;
+}
+
+.input-count {
+  margin-left: auto;
+  font-size: 22rpx;
+  color: #bcc8b0;
+}
+
+/* ---------- 底部说明 ---------- */
+
+.tips {
+  margin-top: 44rpx;
+  padding: 0 6rpx;
+}
+
+.tips-title {
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  color: #a9b79b;
+  margin-bottom: 14rpx;
+}
+
+.tips-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9rpx 0;
+  font-size: 24rpx;
+}
+
+.tips-k {
+  color: #7d8a72;
+}
+
+.tips-v {
+  color: #a3b097;
+}

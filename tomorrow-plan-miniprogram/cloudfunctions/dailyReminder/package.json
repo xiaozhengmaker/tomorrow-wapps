@@ -1,0 +1,9 @@
+{
+  "name": "dailyReminder",
+  "version": "1.0.0",
+  "description": "每晚复盘提醒：登记一次性订阅额度 + 定时发送",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "askAI",
+  "version": "1.1.0",
+  "description": "转发一次 DeepSeek 对话（key 只在云端，支持 openid 白名单）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

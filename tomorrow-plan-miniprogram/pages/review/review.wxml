@@ -1,0 +1,95 @@
+<view class="page">
+
+  <view class="head">
+    <view class="head-top">
+      <text>复盘 · {{friendly}}</text>
+      <text class="gear" bindtap="goSettings">设置</text>
+    </view>
+    <view class="title">{{weekday}}，推进到哪了</view>
+    <view class="sub" wx:if="{{total > 0}}">清单 {{total}} 项，已完成 {{doneCount}} 项</view>
+    <view class="sub" wx:else>今天还没有排清单</view>
+  </view>
+
+  <view class="card stat" wx:if="{{total > 0}}" bindtap="goPlan">
+    <view class="stat-num">{{rate}}<text class="stat-unit">%</text></view>
+    <view class="stat-bar">
+      <view class="stat-fill" style="width:{{percent}}%"></view>
+    </view>
+    <view class="stat-hint">点这里看今天的清单 ›</view>
+  </view>
+
+  <view class="card trend" wx:if="{{trendHas}}">
+    <view class="trend-head">
+      <text class="trend-title">最近 7 天</text>
+      <text class="trend-avg">平均 {{trendAvg}}%</text>
+    </view>
+    <view class="bars">
+      <view class="bar-col" wx:for="{{trend}}" wx:key="date">
+        <view class="bar-track">
+          <view class="bar {{item.has ? 'is-on' : ''}}" style="height: {{item.height}}rpx"></view>
+        </view>
+        <text class="bar-label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card input-card">
+    <view class="label">写两句今天的情况</view>
+    <textarea
+      class="input-area"
+      value="{{note}}"
+      placeholder="例如：上午开会超时，客户电话没打；晚上太累，健身没去"
+      placeholder-class="input-ph"
+      maxlength="300"
+      auto-height
+      show-confirm-bar="{{false}}"
+      cursor-spacing="80"
+      bindinput="onInput"
+    ></textarea>
+
+    <view class="score-row">
+      <text class="score-label">给自己打个分</text>
+      <view class="stars">
+        <text
+          class="star {{item <= score ? 'is-on' : ''}}"
+          wx:for="{{stars}}"
+          wx:key="*this"
+          data-v="{{item}}"
+          bindtap="onScore"
+        >{{item <= score ? '●' : '○'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn-primary" bindtap="generate">{{result ? '重新评估' : '生成评估'}}</view>
+
+  <view class="card result" wx:if="{{result}}">
+    <view class="result-title">今天的账</view>
+    <view class="line" wx:for="{{result.lines}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="card result" wx:if="{{result}}">
+    <view class="result-title">今天的账</view>
+    <view class="line" wx:for="{{result.lines}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="card sync" wx:if="{{saved}}" bindtap="pushDiary">
+    <view class="sync-main">
+      <text class="sync-title">同步今天的日记</text>
+      <text class="sync-sub">提交到 Obsidian 仓库 · {{date}}.md</text>
+    </view>
+    <text class="sync-arrow">›</text>
+  </view>
+
+  <view class="history" wx:if="{{history.length}}">
+    <view class="history-title">最近</view>
+    <view class="card hist" wx:for="{{history}}" wx:key="date">
+      <view class="hist-top">
+        <text class="hist-date">{{item.label}}</text>
+        <text class="hist-rate">{{item.rate}}%</text>
+      </view>
+      <text class="hist-ex">{{item.excerpt}}</text>
+    </view>
+  </view>
+
+</view>

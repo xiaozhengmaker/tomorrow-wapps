@@ -1,0 +1,96 @@
+<view class="page">
+
+  <view class="head">
+    <view class="eyebrow">拆解</view>
+    <view class="title">把模糊的事拆成能马上动手的 1-2-3</view>
+    <view class="sub">一步一个动作，5–30 分钟做完</view>
+  </view>
+
+  <view class="card input-card">
+    <textarea
+      class="input-area"
+      value="{{goal}}"
+      placeholder="例如：把季度复盘会开得有个结果"
+      placeholder-class="input-ph"
+      maxlength="60"
+      auto-height
+      show-confirm-bar="{{false}}"
+      cursor-spacing="80"
+      bindinput="onInput"
+    ></textarea>
+    <view class="btn-primary {{canSubmit ? '' : 'is-disabled'}}" bindtap="generate">拆一下</view>
+  </view>
+
+  <view class="date-row">
+    <text class="date-label">排到</text>
+    <view class="date-chips">
+      <view
+        class="date-chip {{target === item.date ? 'is-on' : ''}}"
+        wx:for="{{quickDates}}"
+        wx:key="key"
+        data-date="{{item.date}}"
+        bindtap="pickDate"
+      >{{item.label}}</view>
+      <picker mode="date" value="{{target}}" bindchange="onDateChange">
+        <view class="date-chip {{isCustomDate ? 'is-on' : ''}}">{{isCustomDate ? targetLabel : '选日期'}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="card result" wx:if="{{card}}">
+    <view class="result-head">
+      <text class="result-goal">{{card.goal}}</text>
+      <text class="result-badge is-busy" wx:if="{{aiPending}}">AI 拆解中…</text>
+      <text class="result-badge" wx:elif="{{card.fromUser}}">我的模板</text>
+      <text class="result-badge" wx:else>{{card.templateName}}</text>
+    </view>
+
+    <view class="step" wx:for="{{card.steps}}" wx:key="id">
+      <text class="step-no">{{index + 1}}</text>
+      <view class="step-main">
+        <input
+          class="step-text"
+          value="{{item.text}}"
+          data-idx="{{index}}"
+          maxlength="40"
+          placeholder="这一步具体做什么"
+          placeholder-class="step-ph"
+          bindinput="onStepInput"
+        />
+        <text class="step-min" data-idx="{{index}}" bindtap="cycleMinutes">{{item.minutes}} 分钟</text>
+      </view>
+      <text class="step-del" data-idx="{{index}}" bindtap="removeStep">✕</text>
+    </view>
+
+    <view class="step-add" wx:if="{{card.steps.length < 3}}" bindtap="addStep">＋ 再加一步</view>
+
+    <view class="result-foot">
+      <text class="total">合计 {{totalText}}</text>
+      <view class="acts">
+        <view class="btn-ghost btn-sm" wx:if="{{card.fromUser}}" bindtap="switchTemplate">换通用</view>
+        <view class="btn-ghost btn-sm" bindtap="saveAsTemplate">存为模板</view>
+        <view class="btn-primary btn-sm" bindtap="pushToPlan">排进{{targetLabel}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="history" wx:if="{{cards.length}}">
+    <view class="history-title">最近拆的</view>
+    <view
+      class="card hist"
+      wx:for="{{cards}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="reopen"
+      bindlongpress="discard"
+    >
+      <view class="hist-main">
+        <text class="hist-goal">{{item.goal}}</text>
+        <text class="hist-meta">{{item.stepCount}} 步 · {{item.totalText}}</text>
+      </view>
+      <text class="hist-arrow">›</text>
+    </view>
+    <view class="history-tip">长按某一张可以丢掉</view>
+  </view>
+
+</view>

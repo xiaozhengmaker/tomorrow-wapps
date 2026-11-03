@@ -1,0 +1,223 @@
+.head {
+  padding: 8rpx 8rpx 30rpx;
+}
+
+.eyebrow {
+  font-size: 21rpx;
+  letter-spacing: 8rpx;
+  color: #a9b79b;
+}
+
+.title {
+  margin-top: 10rpx;
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 1.34;
+  color: #2b3a26;
+}
+
+.sub {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #7d8a72;
+}
+
+/* ---------- 输入 ---------- */
+
+.input-card {
+  padding: 26rpx;
+  margin-bottom: 22rpx;
+}
+
+.input-area {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 120rpx;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  background: #f4f7ea;
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: #33422d;
+}
+
+.input-ph {
+  color: #b3c0a6;
+}
+
+.input-card .btn-primary {
+  margin-top: 20rpx;
+  height: 84rpx;
+}
+
+/* ---------- 结果卡 ---------- */
+
+.result {
+  padding: 26rpx 26rpx 20rpx;
+  margin-bottom: 22rpx;
+}
+
+.result-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6rpx;
+}
+
+.result-goal {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #33422d;
+  padding-right: 14rpx;
+}
+
+.result-badge {
+  flex: none;
+  font-size: 20rpx;
+  color: #6f9461;
+  background: #eaf1de;
+  padding: 3rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.result-badge.is-busy {
+  background: #edf2e0;
+  color: #8d9b82;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  padding: 18rpx 0;
+  border-top: 1rpx dashed #e9efdd;
+}
+
+.step-no {
+  flex: none;
+  width: 44rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #a8b08c;
+  padding-top: 6rpx;
+}
+
+.step-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-text {
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #33422d;
+}
+
+.step-ph {
+  color: #b8c4ab;
+}
+
+.step-min {
+  display: inline-block;
+  margin-top: 8rpx;
+  padding: 3rpx 14rpx;
+  border-radius: 20rpx;
+  background: #edf2e0;
+  font-size: 22rpx;
+  color: #7d8a72;
+}
+
+.step-del {
+  flex: none;
+  width: 48rpx;
+  padding-top: 6rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #bfccab;
+}
+
+.step-add {
+  padding: 16rpx 0 4rpx 44rpx;
+  font-size: 25rpx;
+  color: #6f9461;
+}
+
+.result-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #e9efdd;
+}
+
+.total {
+  font-size: 24rpx;
+  color: #8d9b82;
+}
+
+.acts {
+  display: flex;
+  align-items: center;
+}
+
+.acts .btn-ghost,
+.acts .btn-primary {
+  margin-left: 12rpx;
+}
+
+/* ---------- 历史 ---------- */
+
+.history {
+  margin-top: 36rpx;
+}
+
+.history-title {
+  padding-left: 6rpx;
+  margin-bottom: 14rpx;
+  font-size: 21rpx;
+  letter-spacing: 4rpx;
+  color: #a9b79b;
+}
+
+.hist {
+  display: flex;
+  align-items: center;
+  padding: 22rpx 26rpx;
+  margin-bottom: 14rpx;
+}
+
+.hist-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.hist-goal {
+  display: block;
+  font-size: 28rpx;
+  color: #33422d;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hist-meta {
+  display: block;
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #94a189;
+}
+
+.hist-arrow {
+  flex: none;
+  font-size: 32rpx;
+  color: #bfccab;
+}
+
+.history-tip {
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 21rpx;
+  color: #bcc8b0;
+}

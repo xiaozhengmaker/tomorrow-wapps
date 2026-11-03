@@ -1,0 +1,66 @@
+<view class="page">
+
+  <view class="head">
+    <view class="eyebrow">设置</view>
+    <view class="title">什么时候提醒我复盘</view>
+    <view class="sub">小程序没法在后台弹通知，到点提醒你的是「首页引导卡 + 复盘 tab 小红点」。</view>
+  </view>
+
+  <view class="card group">
+    <view class="row">
+      <view class="row-main">
+        <text class="row-title">复盘提醒</text>
+        <text class="row-sub">关掉之后就不再催</text>
+      </view>
+      <switch checked="{{settings.remindEnabled}}" bindchange="onToggleRemind" color="#5b7f4e" />
+    </view>
+
+    <picker mode="time" value="{{settings.remindTime}}" bindchange="onRemindTime">
+      <view class="row row-link {{settings.remindEnabled ? '' : 'is-off'}}">
+        <text class="row-title">几点提醒</text>
+        <text class="row-value">{{settings.remindTime}} ›</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="card group">
+    <view class="group-title">每晚微信消息</view>
+    <view class="note">
+      微信的「一次性订阅」：你点一次允许，只能换一条推送。所以想每晚收到，就得每晚在这儿点一下。
+    </view>
+    <view class="row row-link" bindtap="openNightly">
+      <view class="row-main">
+        <text class="row-title">{{subscribing ? '正在打开…' : '开启今晚的提醒'}}</text>
+        <text class="row-sub" wx:if="{{!hasTemplate}}">还没配模板 ID（见部署指南 F 节）</text>
+        <text class="row-sub" wx:else>授权一次，今晚 {{settings.remindTime}} 发一条</text>
+      </view>
+      <text class="row-value">›</text>
+    </view>
+  </view>
+
+  <view class="card group">
+    <view class="group-title">想让它像闹钟一样响</view>
+    <view class="note">
+      那得用手机系统日历。在网页版把提醒时间设成 {{settings.remindTime}}，点「每日复盘提醒」导出 .ics，
+      用日历打开加入。一次导入，之后每天到点由系统日历响，跟电脑、跟小程序开不开都没关系。
+    </view>
+    <view class="row row-link" bindtap="howToCalendar">
+      <text class="row-title">具体怎么做</text>
+      <text class="row-value">看步骤 ›</text>
+    </view>
+  </view>
+
+  <view class="card group">
+    <view class="group-title">拆解</view>
+    <picker mode="time" value="{{settings.breakdownStart}}" bindchange="onBreakdownStart">
+      <view class="row row-link">
+        <text class="row-title">排进清单从几点开始</text>
+        <text class="row-value">{{settings.breakdownStart}} ›</text>
+      </view>
+    </picker>
+    <view class="note small">三步会从这个时间往后排，遇到已有事项会自动避开。</view>
+  </view>
+
+  <view class="about">数据只存在这台手机里，清掉小程序会一起没。</view>
+
+</view>

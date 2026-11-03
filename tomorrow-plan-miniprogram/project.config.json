@@ -1,0 +1,64 @@
+{
+  "description": "明日清单 - 把随手写的事拆成带时间的一天",
+  "appid": "wxb0aecde1ce895df4",
+  "projectname": "tomorrow-plan",
+  "compileType": "miniprogram",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "libVersion": "3.5.5",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "tests"
+      },
+      {
+        "type": "file",
+        "value": "README.md"
+      },
+      {
+        "type": "file",
+        "value": "部署指南.md"
+      },
+      {
+        "type": "file",
+        "value": "preview.html"
+      }
+    ]
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "autoAudits": false,
+    "coverView": true,
+    "nodeModules": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "明日清单",
+          "pathName": "pages/plan/plan",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

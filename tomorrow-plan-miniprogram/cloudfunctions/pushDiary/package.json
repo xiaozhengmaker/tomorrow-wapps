@@ -1,0 +1,9 @@
+{
+  "name": "pushDiary",
+  "version": "1.0.0",
+  "description": "把当天的 Markdown 日记提交到 GitHub 仓库，失败进队列由定时器重试",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}
