@@ -576,3 +576,11 @@ page {
 .title {
   letter-spacing: 0.5rpx;
 }
+/* 首页 / 复盘页的吉祥物位置 */
+.hero-mascot {
+  padding: 6rpx 0 14rpx;
+}
+
+.review-mascot {
+  padding: 10rpx 0 6rpx;
+}
