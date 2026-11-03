@@ -15,6 +15,7 @@
   },
   "compileType": "miniprogram",
   "miniprogramRoot": "tomorrow-plan-miniprogram/",
+  "cloudfunctionRoot": "tomorrow-plan-miniprogram/cloudfunctions/",
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [],
