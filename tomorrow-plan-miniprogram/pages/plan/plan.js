@@ -31,7 +31,9 @@ Page({
     editing: false,
     edit: null,
     tags: TAGS,
-    progressWords: PROGRESS_WORDS
+    progressWords: PROGRESS_WORDS,
+    cheering: false,
+    blocks: []
   },
 
   onLoad: function (query) {
@@ -122,8 +124,30 @@ Page({
     } catch (err) {}
 
     if (before > 0 && this.data.remaining === 0) {
-      wx.showToast({ title: '全做完了，去休息吧', icon: 'none' })
+      this.celebrate()
     }
+  },
+
+  /** 全部完成：像素瀑布 + 火焰扫屏 */
+  celebrate: function () {
+    var colors = ['#1cb0f6', '#58cc02', '#ffc800', '#ce82ff', '#ff4b4b']
+    var blocks = []
+    for (var i = 0; i < 30; i++) {
+      blocks.push({
+        id: i,
+        left: Math.floor(Math.random() * 96),
+        delay: (Math.random() * 0.7).toFixed(2),
+        dur: (0.9 + Math.random() * 0.8).toFixed(2),
+        size: [12, 16, 20, 24][i % 4],
+        color: colors[i % colors.length]
+      })
+    }
+    this.setData({ cheering: true, blocks: blocks })
+    var self = this
+    clearTimeout(this._cheerTimer)
+    this._cheerTimer = setTimeout(function () {
+      self.setData({ cheering: false })
+    }, 2800)
   },
 
   markAll: function () {

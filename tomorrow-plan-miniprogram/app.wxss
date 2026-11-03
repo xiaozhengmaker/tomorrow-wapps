@@ -320,3 +320,259 @@ page {
   color: #ffffff;
   box-shadow: 0 4rpx 0 #1899d6;
 }
+
+/* ---------- 吉祥物：像素幽灵（12x12 点阵，用 box-shadow 画） ---------- */
+
+.mascot {
+  width: 10rpx;
+  height: 10rpx;
+  background: transparent;
+  box-shadow:
+  40rpx 0rpx 0 0 #1cb0f6,
+  50rpx 0rpx 0 0 #1cb0f6,
+  60rpx 0rpx 0 0 #1cb0f6,
+  70rpx 0rpx 0 0 #1cb0f6,
+  30rpx 10rpx 0 0 #1cb0f6,
+  40rpx 10rpx 0 0 #1cb0f6,
+  50rpx 10rpx 0 0 #1cb0f6,
+  60rpx 10rpx 0 0 #1cb0f6,
+  70rpx 10rpx 0 0 #1cb0f6,
+  80rpx 10rpx 0 0 #1cb0f6,
+  20rpx 20rpx 0 0 #1cb0f6,
+  30rpx 20rpx 0 0 #1cb0f6,
+  40rpx 20rpx 0 0 #1cb0f6,
+  50rpx 20rpx 0 0 #1cb0f6,
+  60rpx 20rpx 0 0 #1cb0f6,
+  70rpx 20rpx 0 0 #1cb0f6,
+  80rpx 20rpx 0 0 #1cb0f6,
+  90rpx 20rpx 0 0 #1cb0f6,
+  10rpx 30rpx 0 0 #1cb0f6,
+  20rpx 30rpx 0 0 #1cb0f6,
+  30rpx 30rpx 0 0 #1cb0f6,
+  40rpx 30rpx 0 0 #1cb0f6,
+  50rpx 30rpx 0 0 #1cb0f6,
+  60rpx 30rpx 0 0 #1cb0f6,
+  70rpx 30rpx 0 0 #1cb0f6,
+  80rpx 30rpx 0 0 #1cb0f6,
+  90rpx 30rpx 0 0 #1cb0f6,
+  100rpx 30rpx 0 0 #1cb0f6,
+  10rpx 40rpx 0 0 #1cb0f6,
+  20rpx 40rpx 0 0 #1cb0f6,
+  30rpx 40rpx 0 0 #1cb0f6,
+  40rpx 40rpx 0 0 #1cb0f6,
+  50rpx 40rpx 0 0 #1cb0f6,
+  60rpx 40rpx 0 0 #1cb0f6,
+  70rpx 40rpx 0 0 #1cb0f6,
+  80rpx 40rpx 0 0 #1cb0f6,
+  90rpx 40rpx 0 0 #1cb0f6,
+  100rpx 40rpx 0 0 #1cb0f6,
+  10rpx 50rpx 0 0 #1cb0f6,
+  20rpx 50rpx 0 0 #ffffff,
+  30rpx 50rpx 0 0 #ffffff,
+  40rpx 50rpx 0 0 #ffffff,
+  50rpx 50rpx 0 0 #ffffff,
+  60rpx 50rpx 0 0 #ffffff,
+  70rpx 50rpx 0 0 #ffffff,
+  80rpx 50rpx 0 0 #ffffff,
+  90rpx 50rpx 0 0 #ffffff,
+  100rpx 50rpx 0 0 #1cb0f6,
+  10rpx 60rpx 0 0 #1cb0f6,
+  20rpx 60rpx 0 0 #ffffff,
+  30rpx 60rpx 0 0 #ffffff,
+  40rpx 60rpx 0 0 #0b2b45,
+  50rpx 60rpx 0 0 #ffffff,
+  60rpx 60rpx 0 0 #ffffff,
+  70rpx 60rpx 0 0 #0b2b45,
+  80rpx 60rpx 0 0 #ffffff,
+  90rpx 60rpx 0 0 #ffffff,
+  100rpx 60rpx 0 0 #1cb0f6,
+  10rpx 70rpx 0 0 #1cb0f6,
+  20rpx 70rpx 0 0 #ffffff,
+  30rpx 70rpx 0 0 #ffffff,
+  40rpx 70rpx 0 0 #ffffff,
+  50rpx 70rpx 0 0 #ffffff,
+  60rpx 70rpx 0 0 #ffffff,
+  70rpx 70rpx 0 0 #ffffff,
+  80rpx 70rpx 0 0 #ffffff,
+  90rpx 70rpx 0 0 #ffffff,
+  100rpx 70rpx 0 0 #1cb0f6,
+  10rpx 80rpx 0 0 #1cb0f6,
+  20rpx 80rpx 0 0 #1cb0f6,
+  30rpx 80rpx 0 0 #1cb0f6,
+  40rpx 80rpx 0 0 #1cb0f6,
+  50rpx 80rpx 0 0 #1cb0f6,
+  60rpx 80rpx 0 0 #1cb0f6,
+  70rpx 80rpx 0 0 #1cb0f6,
+  80rpx 80rpx 0 0 #1cb0f6,
+  90rpx 80rpx 0 0 #1cb0f6,
+  100rpx 80rpx 0 0 #1cb0f6,
+  10rpx 90rpx 0 0 #1cb0f6,
+  30rpx 90rpx 0 0 #1cb0f6,
+  50rpx 90rpx 0 0 #1cb0f6,
+  60rpx 90rpx 0 0 #1cb0f6,
+  80rpx 90rpx 0 0 #1cb0f6,
+  100rpx 90rpx 0 0 #1cb0f6;
+}
+
+/* 外框留出点阵的总尺寸，方便居中 */
+.mascot-box {
+  width: 120rpx;
+  height: 110rpx;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mascot-float {
+  animation: floaty 2.4s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10rpx); }
+}
+
+.mascot-jump {
+  animation: jump 1.6s cubic-bezier(.3,.7,.4,1) infinite;
+}
+
+@keyframes jump {
+  0%, 60%, 100% { transform: translateY(0) scaleY(1); }
+  10% { transform: translateY(2rpx) scaleY(0.92); }
+  30% { transform: translateY(-26rpx) scaleY(1.04); }
+  45% { transform: translateY(0) scaleY(0.96); }
+}
+/* ---------- 全清：像素瀑布 + 火焰扫屏 ---------- */
+
+.celebration {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -60rpx;
+  border-radius: 2rpx;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes fall {
+  from { transform: translateY(-80rpx) rotate(0deg); }
+  to { transform: translateY(105vh) rotate(300deg); }
+}
+
+.fire {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background: linear-gradient(0deg, #ff4b4b 0%, #ff9800 55%, #ffc800 100%);
+  animation: burn 2.6s cubic-bezier(.2, .8, .3, 1) forwards;
+}
+
+@keyframes burn {
+  0% { height: 0; opacity: .95; }
+  35% { height: 104vh; opacity: .6; }
+  70% { height: 104vh; opacity: .32; }
+  100% { height: 104vh; opacity: 0; }
+}
+
+.cheer-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 38%;
+  text-align: center;
+  font-size: 108rpx;
+  font-weight: 800;
+  letter-spacing: 6rpx;
+  color: #ffffff;
+  text-shadow: 0 10rpx 0 #0b2b45;
+  animation: cheerText .6s cubic-bezier(.2, .8, .3, 1) both;
+}
+
+@keyframes cheerText {
+  0% { opacity: 0; transform: scale(.5) rotate(-6deg); }
+  60% { opacity: 1; transform: scale(1.12) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.cheer-mascot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 52%;
+  animation: jump 1.6s cubic-bezier(.3,.7,.4,1) infinite;
+}
+/* ---------- 像素化：方角 + 硬偏移阴影 + 等宽数字 ---------- */
+
+.card {
+  border-radius: 10rpx;
+  box-shadow: 6rpx 6rpx 0 #e5e5e5;
+}
+
+.btn-primary,
+.btn-ghost,
+.btn-danger {
+  border-radius: 10rpx;
+}
+
+.chip,
+.date-chip {
+  border-radius: 6rpx;
+}
+
+.tag {
+  border-radius: 4rpx;
+}
+
+.row-icon {
+  border-radius: 4rpx;
+}
+
+.row-body {
+  border-radius: 10rpx !important;
+  box-shadow: 6rpx 6rpx 0 #ececec !important;
+}
+
+.row-check {
+  border-radius: 6rpx;
+}
+
+.row-clock,
+.stat-num,
+.plan-ratio,
+.input-count,
+.big-number {
+  font-family: Menlo, Consolas, "Courier New", monospace;
+  letter-spacing: -0.5rpx;
+}
+
+.stat-num {
+  color: #1cb0f6;
+}
+
+.plan-bar,
+.bar,
+.stat-bar {
+  border-radius: 0;
+}
+
+.progress-fill::after {
+  display: none;
+}
+
+/* 标题加一点像素味的字距 */
+.hero-title,
+.head-title,
+.title {
+  letter-spacing: 0.5rpx;
+}

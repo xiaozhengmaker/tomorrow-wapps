@@ -14,7 +14,7 @@
   </view>
 
   <view class="empty" wx:if="{{isEmpty}}">
-    <view class="empty-mark">☾</view>
+    <view class="mascot-box mascot-float"><view class="mascot"></view></view>
     <view class="empty-title">这一天还是空的</view>
     <view class="empty-sub">回首页随手写两句，我来排时间</view>
     <view class="btn-primary empty-btn" bindtap="goAdd">去写点东西</view>
@@ -140,6 +140,19 @@
       <view class="btn-danger" bindtap="onDelete">删除</view>
       <view class="btn-primary btn-flex" bindtap="saveEdit">保存</view>
     </view>
+  </view>
+
+<!-- 全清：像素瀑布 + 火焰扫屏 -->
+  <view class="celebration" wx:if="{{cheering}}">
+    <view
+      class="confetti"
+      wx:for="{{blocks}}"
+      wx:key="id"
+      style="left:{{item.left}}%; width:{{item.size}}rpx; height:{{item.size}}rpx; background:{{item.color}}; animation-delay:{{item.delay}}s; animation-duration:{{item.dur}}s;"
+    ></view>
+    <view class="fire"></view>
+    <view class="cheer-text">全清!</view>
+    <view class="mascot-box cheer-mascot"><view class="mascot"></view></view>
   </view>
 
 </view>

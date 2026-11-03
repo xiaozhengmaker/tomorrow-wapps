@@ -506,6 +506,29 @@
     width: 16px; height: 16px; margin-right: 6px; border-radius: 50% 50% 50% 4px;
     background: #ffc800; transform: rotate(-12deg); display: inline-block;
   }
+  /* ---------- 像素：tab 图标 + 吉祥物 ---------- */
+  .tab { display: flex; align-items: center; justify-content: center; gap: 4px; }
+  .ticon { width: 16px; height: 16px; image-rendering: pixelated; }
+  .mascot-img {
+    width: 64px; height: 64px; image-rendering: pixelated;
+    display: block; margin: 0 auto 6px;
+    animation: floaty 2.4s ease-in-out infinite;
+  }
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  /* ---------- 像素化 ---------- */
+  .card { border-radius: 4px !important; box-shadow: 3px 3px 0 #e5e5e5 !important; }
+  .row-body { border-radius: 4px !important; box-shadow: 3px 3px 0 #ececec !important; }
+  .btn-primary, .btn-solid, .btn-line, .btn-ghost { border-radius: 4px !important; }
+  .chip, .date-chip { border-radius: 3px !important; }
+  .tag { border-radius: 2px !important; }
+  .row-icon { border-radius: 2px !important; }
+  .row-check { border-radius: 3px !important; }
+  .row-clock, .stat-num, .plan-ratio { font-family: Menlo, Consolas, monospace !important; }
+  .plan-bar, .stat-bar { border-radius: 0 !important; }
+  .hero-title, .head-title { letter-spacing: 0.3px !important; }
 </style></head>
 <body>
 
@@ -528,7 +551,7 @@
 
       <div class="scroll">
         <div class="hero">
-          <div class="streak-demo"><i></i>连续 12 天</div>
+          <img class="mascot-img" src="images/mascot.png"><div class="streak-demo"><i></i>连续 12 天</div>
           <div class="hero-eyebrow">TOMORROW</div>
           <div class="hero-title">随手写下来</div>
           <div class="hero-title accent">明天照着做</div>
@@ -579,9 +602,9 @@
       </div>
 
       <div class="tabbar">
-        <div class="tab is-on">清单</div>
-        <div class="tab">拆解</div>
-        <div class="tab">复盘</div>
+        <div class="tab is-on"><img class="ticon" src="images/list-on.png">清单</div>
+        <div class="tab"><img class="ticon" src="images/split.png">拆解</div>
+        <div class="tab"><img class="ticon" src="images/review.png">复盘</div>
       </div>
 
       <div class="toast" id="toast"></div>
@@ -605,9 +628,9 @@
       </div>
 
       <div class="tabbar">
-        <div class="tab is-on">清单</div>
-        <div class="tab">拆解</div>
-        <div class="tab">复盘</div>
+        <div class="tab is-on"><img class="ticon" src="images/list-on.png">清单</div>
+        <div class="tab"><img class="ticon" src="images/split.png">拆解</div>
+        <div class="tab"><img class="ticon" src="images/review.png">复盘</div>
       </div>
 
       <div id="sheetRoot"></div>
@@ -642,9 +665,9 @@
       </div>
 
       <div class="tabbar">
-        <div class="tab">清单</div>
-        <div class="tab is-on">拆解</div>
-        <div class="tab">复盘</div>
+        <div class="tab"><img class="ticon" src="images/list.png">清单</div>
+        <div class="tab is-on"><img class="ticon" src="images/split-on.png">拆解</div>
+        <div class="tab"><img class="ticon" src="images/review.png">复盘</div>
       </div>
     </div>
   </div>
@@ -683,9 +706,9 @@
       </div>
 
       <div class="tabbar">
-        <div class="tab">清单</div>
-        <div class="tab">拆解</div>
-        <div class="tab is-on">复盘</div>
+        <div class="tab"><img class="ticon" src="images/list.png">清单</div>
+        <div class="tab"><img class="ticon" src="images/split.png">拆解</div>
+        <div class="tab is-on"><img class="ticon" src="images/review-on.png">复盘</div>
       </div>
     </div>
   </div>
