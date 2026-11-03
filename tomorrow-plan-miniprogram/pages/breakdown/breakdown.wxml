@@ -37,7 +37,7 @@
     </view>
   </view>
 
-  <view class="card result" wx:if="{{card}}">
+  <view class="card result card-tint-violet" wx:if="{{card}}">
     <view class="result-head">
       <text class="result-goal">{{card.goal}}</text>
       <text class="result-badge is-busy" wx:if="{{aiPending}}">AI 拆解中…</text>

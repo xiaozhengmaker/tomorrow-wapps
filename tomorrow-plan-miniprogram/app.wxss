@@ -255,3 +255,108 @@ page {
   color: #ffffff;
   font-weight: 800;
 }
+
+/* ---------- 行底色：把分类色铺满整行，别只挂在小标签上 ---------- */
+
+.tint-work  { background: #eaf5ff !important; border-color: #d6eaff !important; }
+.tint-life  { background: #fff7e4 !important; border-color: #ffe9b8 !important; }
+.tint-health{ background: #eafaf0 !important; border-color: #cdf0d9 !important; }
+.tint-study { background: #f2eeff !important; border-color: #e0d9ff !important; }
+.tint-misc  { background: #f7f7f9 !important; border-color: #ececf1 !important; }
+
+.tint-work.row:active  { background: #eaf6ff !important; }
+
+/* 左侧彩色竖条，让每行有"血条" */
+.row-body::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  bottom: 18rpx;
+  width: 6rpx;
+  border-radius: 6rpx;
+  background: #e5e5ea;
+}
+
+.tint-work::before  { background: #0a84ff; }
+.tint-life::before  { background: #ffb800; }
+.tint-health::before{ background: #34c759; }
+.tint-study::before { background: #5e5ce6; }
+
+/* ---------- 卡片分级上色 ---------- */
+
+.card-tint-blue {
+  background: linear-gradient(160deg, #f0f8ff 0%, #ffffff 62%);
+  border-color: #e2efff;
+}
+
+.card-tint-warm {
+  background: linear-gradient(160deg, #fff8ec 0%, #ffffff 62%);
+  border-color: #fdeed2;
+}
+
+.card-tint-violet {
+  background: linear-gradient(150deg, #efe9ff 0%, #faf8ff 58%, #ffffff 100%);
+  border-color: #ded4ff;
+}
+
+/* ---------- 大数字 ---------- */
+
+.big-number {
+  font-size: 96rpx;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -4rpx;
+  color: #0a84ff;
+}
+
+.big-number .unit {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #aeaeb2;
+  margin-left: 6rpx;
+  letter-spacing: 0;
+}
+
+/* ---------- 进度条：渐变 ---------- */
+
+.bar-fill, .stat-fill {
+  background: linear-gradient(90deg, #5aa5ff 0%, #0a84ff 100%) !important;
+}
+
+.bar, .stat-bar {
+  background: #eef4fb !important;
+}
+/* 行 = 彩色圆角块，去掉虚线 */
+.row-body {
+  border-bottom: 0 !important;
+  border-radius: 22rpx !important;
+  margin-bottom: 16rpx;
+  padding: 24rpx 26rpx 22rpx 30rpx;
+}
+
+.row:last-child .row-body {
+  border-bottom: 0 !important;
+}
+
+/* 时间做成小胶囊 */
+.row-clock {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  border-radius: 10rpx;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 26rpx;
+  font-weight: 800;
+}
+/* 设置页 / 输入区：别让整页都是纯白 */
+.group {
+  background: #fbfbfe !important;
+  border-color: #f0f0f6 !important;
+}
+
+.input-card {
+  background: linear-gradient(170deg, #fbfdff 0%, #ffffff 60%) !important;
+  border-color: #e8f1fd !important;
+}
+
+/* tabBar 选中加一条短下划线 */

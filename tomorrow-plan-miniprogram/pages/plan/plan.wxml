@@ -38,7 +38,7 @@
         <view class="row-dot"></view>
       </view>
 
-      <view class="row-body card">
+      <view class="row-body card tint-{{item.tagKey}}">
         <view class="row-main">
           <text class="row-title">{{item.title}}</text>
           <view

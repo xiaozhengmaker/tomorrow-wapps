@@ -8,7 +8,7 @@
   </view>
 
   <view
-    class="card plan-card"
+    class="card plan-card card-tint-blue"
     wx:for="{{cards}}"
     wx:key="date"
     data-date="{{item.date}}"

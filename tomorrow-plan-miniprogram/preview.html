@@ -200,7 +200,7 @@
     width: 10px; height: 10px; border-radius: 50%;
     background: #fff; border: 2.5px solid #d1d1d6; z-index: 2;
   }
-  .row-body { flex: 1; margin-bottom: 0; padding: 12px 0 11px; cursor: pointer; background: transparent !important; border: 0 !important; border-bottom: 1px dashed #ececf1 !important; border-radius: 0 !important; box-shadow: none !important; }
+  .row-body { flex: 1; margin-bottom: 0; padding: 12px 0 11px; cursor: pointer; background: transparent !important; border: 0 !important; border-radius: 12px !important; box-shadow: none !important; }
   .row-main { display: flex; align-items: flex-start; }
   .row-title { flex: 1; font-size: 15.5px; line-height: 1.45; color: #111111; padding-right: 8px; word-break: break-word; }
   .row-check {
@@ -431,6 +431,31 @@
   }
   .tab.is-on { color: #0a84ff; font-weight: 800; }
   .head-title, .hero-title { font-weight: 800; letter-spacing: -0.4px; }
+  /* ---------- 颜色层：行淡彩 + 左侧色条 + 卡片渐变 ---------- */
+  .tint-work   { background: #eaf5ff !important; border: 1px solid #d6eaff !important; border-radius: 12px !important; margin-bottom: 8px; }
+  .tint-life   { background: #fff7e4 !important; border: 1px solid #ffe9b8 !important; border-radius: 12px !important; margin-bottom: 8px; }
+  .tint-health { background: #eafaf0 !important; border: 1px solid #cdf0d9 !important; border-radius: 12px !important; margin-bottom: 8px; }
+  .tint-study  { background: #f2eeff !important; border: 1px solid #e0d9ff !important; border-radius: 12px !important; margin-bottom: 8px; }
+  .tint-misc   { background: #f7f7f9 !important; border: 1px solid #ececf1 !important; border-radius: 12px !important; margin-bottom: 8px; }
+
+  .row-body { position: relative; padding-left: 12px !important; }
+  .row-body::before {
+    content: ''; position: absolute; left: 0; top: 10px; bottom: 10px;
+    width: 3px; border-radius: 3px; background: #e5e5ea;
+  }
+  .tint-work::before   { background: #0a84ff; }
+  .tint-life::before   { background: #ffb800; }
+  .tint-health::before { background: #34c759; }
+  .tint-study::before  { background: #5e5ce6; }
+
+  .card-tint-blue   { background: linear-gradient(150deg, #e8f4ff 0%, #f7fbff 55%, #ffffff 100%); border-color: #d6eaff; box-shadow: 0 8px 20px rgba(10, 132, 255, .10); }
+  .card-tint-violet { background: linear-gradient(150deg, #efe9ff 0%, #faf8ff 58%, #ffffff 100%); border-color: #ded4ff; }
+  .card-tint-warm   { background: linear-gradient(160deg, #fff8ec 0%, #ffffff 62%); border-color: #fdeed2; }
+
+  .stat-num { font-size: 52px !important; color: #0a84ff !important; letter-spacing: -2px !important; }
+  .plan-bar-fill, .stat-fill, .bar-fill {
+    background: linear-gradient(90deg, #5aa5ff 0%, #0a84ff 100%) !important;
+  }
 </style></head>
 <body>
 
@@ -477,7 +502,7 @@
           <span class="date-chip">选日期</span>
         </div>
 
-        <div class="card input-card">
+        <div class="card input-card" style="background:linear-gradient(170deg,#fbfdff 0%,#ffffff 60%);border-color:#e8f1fd">
           <div class="input-head">
             <span class="input-title">明天要做什么？</span>
             <span class="input-hint">一句一行，或用逗号隔开</span>
@@ -555,7 +580,7 @@
           <div class="hero-sub">一步一个动作，5–30 分钟做完</div>
         </div>
 
-        <div class="card input-card">
+        <div class="card input-card" style="background:linear-gradient(170deg,#fbfdff 0%,#ffffff 60%);border-color:#e8f1fd">
           <textarea id="bdGoal" class="input-area short" maxlength="60"
             placeholder="例如：把季度复盘会开得有个结果"></textarea>
           <button class="btn-primary" id="bdGo" style="margin-top:10px">拆一下</button>
@@ -589,10 +614,10 @@
           <div class="head-sub" id="rvHeadSub">清单 3 项，已完成 2 项</div>
         </div>
 
-        <div class="card stat" id="rvStat"></div>
+        <div class="card stat card-tint-blue" id="rvStat"></div>
         <div id="rvTrend"></div>
 
-        <div class="card input-card">
+        <div class="card input-card" style="background:linear-gradient(170deg,#fbfdff 0%,#ffffff 60%);border-color:#e8f1fd">
           <div class="label">写两句今天的情况</div>
           <textarea id="rvNote" class="input-area short" maxlength="300"
             placeholder="例如：上午开会超时，客户电话没打"></textarea>
@@ -630,7 +655,7 @@
           <div class="head-sub">小程序没法在后台弹通知，到点提醒你的是「首页引导卡 + tab 小红点」。</div>
         </div>
 
-        <div class="card group">
+        <div class="card group" style="background:#fbfbfe;border-color:#f0f0f6">
           <div class="srow">
             <div>
               <span class="srow-title">复盘提醒</span>
@@ -644,7 +669,7 @@
           </div>
         </div>
 
-        <div class="card group">
+        <div class="card group" style="background:#fbfbfe;border-color:#f0f0f6">
           <div class="group-title">想让它像闹钟一样响</div>
           <div class="note-s">那得用手机系统日历：在网页版把提醒时间设成 20:00，点「每日复盘提醒」导出 .ics，用日历打开加入。之后每天到点由系统日历响，跟电脑开不开没关系。</div>
           <div class="srow">
@@ -653,7 +678,7 @@
           </div>
         </div>
 
-        <div class="card group">
+        <div class="card group" style="background:#fbfbfe;border-color:#f0f0f6">
           <div class="group-title">拆解</div>
           <div class="srow">
             <span class="srow-title">排进清单从几点开始</span>
@@ -807,7 +832,7 @@
       }).join('');
 
       host.innerHTML =
-        '<div class="card plan-card">' +
+        '<div class="card plan-card card-tint-blue">' +
           '<div class="plan-head">' +
             '<div class="plan-head-left">' +
               '<span class="plan-badge">明日</span>' +
@@ -848,7 +873,7 @@
       var headTitle = remaining === 0 ? '全部完成，收工' : '还有 ' + remaining + ' 件事';
 
       var rows = items.map(function (it) {
-        var cls = 'row' + (it.done ? ' done' : '');
+        var cls = 'row tint-' + tagKey(it.tag) + (it.done ? ' done' : '');
         var st = Progress.judge(it.progress || '');
 
         var tags = '<span class="tag tag-' + tagKey(it.tag) + '">' + esc(it.tag || '其他') + '</span>';

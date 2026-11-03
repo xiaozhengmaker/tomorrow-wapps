@@ -251,3 +251,18 @@
 .tips-v {
   color: #c0c0c5;
 }
+
+/* 卡片加一层彩色描边，别让白卡飘在白底上 */
+.plan-card.card-tint-blue {
+  border-color: #dcecff;
+  box-shadow: 0 10rpx 30rpx rgba(10, 132, 255, 0.07);
+}
+
+.input-card {
+  border-color: #f0f0f5;
+  box-shadow: 0 8rpx 24rpx rgba(17, 17, 17, 0.04);
+}
+
+.tips-title {
+  color: #0a84ff;
+}

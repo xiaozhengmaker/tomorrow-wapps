@@ -10,7 +10,7 @@
     <view class="sub" wx:else>今天还没有排清单</view>
   </view>
 
-  <view class="card stat" wx:if="{{total > 0}}" bindtap="goPlan">
+  <view class="card stat card-tint-blue" wx:if="{{total > 0}}" bindtap="goPlan">
     <view class="stat-num">{{rate}}<text class="stat-unit">%</text></view>
     <view class="stat-bar">
       <view class="stat-fill" style="width:{{percent}}%"></view>
