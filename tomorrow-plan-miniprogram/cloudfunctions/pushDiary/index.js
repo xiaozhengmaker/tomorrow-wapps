@@ -83,6 +83,16 @@ async function commitMarkdown(date, markdown) {
   let sha = null
   if (head.status === 200 && head.body && head.body.sha) {
     sha = head.body.sha
+
+    // 内容一模一样就别再提交一次，否则每次点「生成评估」都多一条 commit
+    try {
+      var existing = Buffer.from(head.body.content || '', 'base64').toString('utf8')
+      if (existing && existing === markdown) {
+        return { ok: true, path: filePath, unchanged: true }
+      }
+    } catch (e) {
+      // 读不出来就照常提交
+    }
   } else if (head.status !== 404) {
     return {
       ok: false,
