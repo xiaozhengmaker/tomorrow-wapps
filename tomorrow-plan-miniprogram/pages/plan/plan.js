@@ -130,7 +130,7 @@ Page({
 
   /** 全部完成：像素瀑布 + 火焰扫屏 */
   celebrate: function () {
-    var colors = ['#1cb0f6', '#58cc02', '#ffc800', '#ce82ff', '#ff4b4b']
+    var colors = ['#ff6b1a', '#ffb020', '#ff6b1a', '#9a9a9a', '#e02a1a']
     var blocks = []
     for (var i = 0; i < 30; i++) {
       blocks.push({

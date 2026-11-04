@@ -2,7 +2,7 @@
 
 page {
   background-color: #ffffff;
-  color: #4b4b4b;
+  color: #0a0a0a;
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
     Helvetica, "Microsoft YaHei", sans-serif;
   font-size: 28rpx;
@@ -22,7 +22,7 @@ page {
   position: relative;
   box-sizing: border-box;
   background: #ffffff;
-  border: 4rpx solid #e5e5e5;
+  border: 4rpx solid #dcdcdc;
   border-radius: 28rpx;
 }
 
@@ -35,23 +35,23 @@ page {
   box-sizing: border-box;
   height: 100rpx;
   border-radius: 28rpx;
-  background: #1cb0f6;
+  background: #111111;
   color: #ffffff;
   font-size: 32rpx;
   font-weight: 800;
   letter-spacing: 1rpx;
-  box-shadow: 0 10rpx 0 #1899d6;
+  box-shadow: 0 10rpx 0 #000000;
   transition: transform .1s ease-out, box-shadow .1s ease-out;
 }
 
 .btn-primary:active {
   transform: translateY(10rpx);
-  box-shadow: 0 0 0 #1899d6;
+  box-shadow: 0 0 0 #000000;
 }
 
 .btn-primary.is-disabled {
-  background: #e5e5e5;
-  color: #afafaf;
+  background: #dcdcdc;
+  color: #9a9a9a;
   box-shadow: 0 10rpx 0 #d0d0d0;
 }
 
@@ -62,23 +62,23 @@ page {
   height: 92rpx;
   padding: 0 36rpx;
   border-radius: 28rpx;
-  border: 4rpx solid #e5e5e5;
+  border: 4rpx solid #dcdcdc;
   background: #ffffff;
-  color: #1cb0f6;
+  color: #ff6b1a;
   font-size: 28rpx;
   font-weight: 800;
-  box-shadow: 0 8rpx 0 #e5e5e5;
+  box-shadow: 0 8rpx 0 #dcdcdc;
   transition: transform .1s ease-out, box-shadow .1s ease-out;
 }
 
 .btn-ghost:active {
   transform: translateY(8rpx);
-  box-shadow: 0 0 0 #e5e5e5;
-  background: #f7f7f7;
+  box-shadow: 0 0 0 #dcdcdc;
+  background: #f5f5f5;
 }
 
 .btn-ghost-quiet {
-  color: #afafaf;
+  color: #9a9a9a;
 }
 
 .btn-danger {
@@ -88,17 +88,17 @@ page {
   height: 92rpx;
   padding: 0 40rpx;
   border-radius: 28rpx;
-  background: #ff4b4b;
+  background: #e02a1a;
   color: #ffffff;
   font-size: 29rpx;
   font-weight: 800;
-  box-shadow: 0 8rpx 0 #ea2b2b;
+  box-shadow: 0 8rpx 0 #b81f10;
   transition: transform .1s ease-out, box-shadow .1s ease-out;
 }
 
 .btn-danger:active {
   transform: translateY(8rpx);
-  box-shadow: 0 0 0 #ea2b2b;
+  box-shadow: 0 0 0 #b81f10;
 }
 
 .btn-flex {
@@ -113,9 +113,9 @@ page {
   height: 60rpx;
   padding: 0 28rpx;
   border-radius: 20rpx;
-  border: 4rpx solid #e5e5e5;
+  border: 4rpx solid #dcdcdc;
   background: #ffffff;
-  color: #4b4b4b;
+  color: #0a0a0a;
   font-size: 24rpx;
   font-weight: 700;
   transition: transform .1s ease-out;
@@ -123,7 +123,7 @@ page {
 
 .chip:active {
   transform: translateY(2rpx);
-  background: #f7f7f7;
+  background: #f5f5f5;
 }
 
 .tag {
@@ -136,13 +136,13 @@ page {
   line-height: 1.5;
 }
 
-.tag-work { background: #e3f4fd; color: #1899d6; }
-.tag-life { background: #fff4d1; color: #b98a00; }
-.tag-health { background: #e8f8d8; color: #58a700; }
-.tag-study { background: #f3e6ff; color: #a568cc; }
-.tag-misc { background: #f0f0f0; color: #8a8a8a; }
-.tag-important { background: #ffe0e0; color: #ea2b2b; }
-.tag-auto { background: #f0f0f0; color: #afafaf; }
+.tag-work { background: #ffeee4; color: #d14f00; }
+.tag-life { background: #fff0d6; color: #b98a00; }
+.tag-health { background: #fff2dd; color: #c98800; }
+.tag-study { background: #eeeeee; color: #a568cc; }
+.tag-misc { background: #f2f2f2; color: #8a8a8a; }
+.tag-important { background: #ffe2dc; color: #b81f10; }
+.tag-auto { background: #f2f2f2; color: #9a9a9a; }
 
 /* ---------- 分类图标方块 ---------- */
 
@@ -160,11 +160,11 @@ page {
   font-weight: 800;
 }
 
-.icon-work { background: #1cb0f6; }
-.icon-life { background: #ffc800; }
-.icon-health { background: #58cc02; }
-.icon-study { background: #ce82ff; }
-.icon-misc { background: #afafaf; }
+.icon-work { background: #ff6b1a; }
+.icon-life { background: #ff6b1a; }
+.icon-health { background: #ffb020; }
+.icon-study { background: #9a9a9a; }
+.icon-misc { background: #9a9a9a; }
 
 /* ---------- 小号按钮 ---------- */
 
@@ -174,12 +174,12 @@ page {
   font-size: 25rpx;
   border-radius: 22rpx;
   letter-spacing: 0;
-  box-shadow: 0 6rpx 0 #1899d6;
+  box-shadow: 0 6rpx 0 #d14f00;
 }
 
 .btn-sm:active {
   transform: translateY(6rpx);
-  box-shadow: 0 0 0 #1899d6;
+  box-shadow: 0 0 0 #000000;
 }
 
 /* ---------- 粗进度条 ---------- */
@@ -187,7 +187,7 @@ page {
 .progress-track {
   height: 28rpx;
   border-radius: 14rpx;
-  background: #e5e5e5;
+  background: #dcdcdc;
   overflow: hidden;
 }
 
@@ -195,7 +195,7 @@ page {
   position: relative;
   height: 100%;
   border-radius: 14rpx;
-  background: #58cc02;
+  background: #ffb020;
   transition: width .35s cubic-bezier(.2, .8, .3, 1);
 }
 
@@ -254,7 +254,7 @@ page {
   height: 64rpx;
   padding: 0 24rpx 0 12rpx;
   border-radius: 999rpx;
-  background: #fff4d1;
+  background: #fff0d6;
   color: #b98a00;
   font-size: 24rpx;
   font-weight: 800;
@@ -265,7 +265,7 @@ page {
   height: 34rpx;
   margin-right: 12rpx;
   border-radius: 50% 50% 50% 8rpx;
-  background: #ffc800;
+  background: #ff6b1a;
   transform: rotate(-12deg);
 }
 
@@ -285,7 +285,7 @@ page {
 .date-label {
   flex: none;
   font-size: 24rpx;
-  color: #afafaf;
+  color: #9a9a9a;
   font-weight: 800;
   margin-right: 14rpx;
   padding-top: 12rpx;
@@ -302,9 +302,9 @@ page {
   padding: 10rpx 28rpx;
   margin: 0 12rpx 12rpx 0;
   border-radius: 20rpx;
-  border: 4rpx solid #e5e5e5;
+  border: 4rpx solid #dcdcdc;
   background: #ffffff;
-  color: #4b4b4b;
+  color: #0a0a0a;
   font-size: 25rpx;
   font-weight: 800;
   transition: transform .1s ease-out;
@@ -315,10 +315,10 @@ page {
 }
 
 .date-chip.is-on {
-  background: #1cb0f6;
-  border-color: #1899d6;
+  background: #ff6b1a;
+  border-color: #d14f00;
   color: #ffffff;
-  box-shadow: 0 4rpx 0 #1899d6;
+  box-shadow: 0 4rpx 0 #d14f00;
 }
 
 /* ---------- 吉祥物：像素幽灵（12x12 点阵，用 box-shadow 画） ---------- */
@@ -498,7 +498,7 @@ page {
   right: 0;
   bottom: 0;
   height: 0;
-  background: linear-gradient(0deg, #ff4b4b 0%, #ff9800 55%, #ffc800 100%);
+  background: linear-gradient(0deg, #e02a1a 0%, #ff9800 55%, #ff6b1a 100%);
   animation: burn 2.6s cubic-bezier(.2, .8, .3, 1) forwards;
 }
 
@@ -519,7 +519,7 @@ page {
   font-weight: 800;
   letter-spacing: 6rpx;
   color: #ffffff;
-  text-shadow: 0 10rpx 0 #0b2b45;
+  text-shadow: 0 10rpx 0 #111111;
   animation: cheerText .6s cubic-bezier(.2, .8, .3, 1) both;
 }
 
@@ -540,7 +540,7 @@ page {
 
 .card {
   border-radius: 10rpx;
-  box-shadow: 6rpx 6rpx 0 #e5e5e5;
+  box-shadow: 6rpx 6rpx 0 #dcdcdc;
 }
 
 .btn-primary,
@@ -564,7 +564,7 @@ page {
 
 .row-body {
   border-radius: 10rpx !important;
-  box-shadow: 6rpx 6rpx 0 #ececec !important;
+  box-shadow: 6rpx 6rpx 0 #e6e6e6 !important;
 }
 
 .row-check {
@@ -581,7 +581,7 @@ page {
 }
 
 .stat-num {
-  color: #1cb0f6;
+  color: #ff6b1a;
 }
 
 .plan-bar,

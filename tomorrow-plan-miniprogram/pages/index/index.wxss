@@ -162,7 +162,7 @@
 .nudge-arrow {
   flex: none;
   font-size: 34rpx;
-  color: #d1d1d6;
+  color: #c9c9c9;
 }
 
 /* ---------- 输入区 ---------- */
@@ -202,7 +202,7 @@
 }
 
 .input-ph {
-  color: #d1d1d6;
+  color: #c9c9c9;
   line-height: 1.72;
 }
 

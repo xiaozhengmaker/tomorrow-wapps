@@ -42,7 +42,7 @@
 }
 
 .input-ph {
-  color: #d1d1d6;
+  color: #c9c9c9;
 }
 
 .input-card .btn-primary {
@@ -115,7 +115,7 @@
 }
 
 .step-ph {
-  color: #d1d1d6;
+  color: #c9c9c9;
 }
 
 .step-min {
