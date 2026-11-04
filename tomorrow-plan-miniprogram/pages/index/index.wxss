@@ -272,25 +272,31 @@
 }
 /* ================= 布局重构：顶栏压成一行 + 悬浮输入 ================= */
 
+/* 顶栏：火焰脱离文档流，压在日期文字的左上方 */
 .topbar {
-  display: flex;
-  align-items: center;
-  padding: 4rpx 0 22rpx;
+  position: relative;
+  padding: 18rpx 0 24rpx;
+  min-height: 104rpx;
 }
 
 .topbar-mascot {
-  flex: none;
-  width: 96rpx;
-  height: 96rpx;
-  margin-right: 10rpx;
+  position: absolute;
+  left: -8rpx;
+  top: -18rpx;
+  z-index: 3;
+  width: 110rpx;
+  height: 110rpx;
   display: flex;
   align-items: center;
-  transform: scale(0.62);
-  transform-origin: 20% 50%;
+  transform: scale(0.72);
+  transform-origin: 0 50%;
+  /* 这一层投影就是「悬浮」的关键：有影子才会觉得它离开了纸面 */
+  filter: drop-shadow(0 10rpx 14rpx rgba(255, 107, 26, 0.28))
+          drop-shadow(0 3rpx 4rpx rgba(0, 0, 0, 0.16));
 }
 
 .topbar-main {
-  flex: 1;
+  padding-left: 84rpx;
   min-width: 0;
 }
 
