@@ -1,38 +1,67 @@
 <view class="page">
 
-  <view class="cal-head">
-    <view class="cal-nav" bindtap="prevMonth">‹</view>
-    <view class="cal-title">
-      <view class="cal-month">{{monthLabel}}</view>
-      <view class="cal-summary">{{summary}}</view>
-    </view>
-    <view class="cal-nav" bindtap="nextMonth">›</view>
-  </view>
+  <view class="desk">
 
-  <view class="cal-week">
-    <text class="cal-week-cell" wx:for="{{['一','二','三','四','五','六','日']}}" wx:key="*this">{{item}}</text>
-  </view>
-
-  <view class="cal-grid">
-    <view
-      class="cal-cell {{item.blank ? 'is-blank' : ''}} {{item.isToday ? 'is-today' : ''}}"
-      wx:for="{{cells}}"
-      wx:key="key"
-      data-date="{{item.date}}"
-      bindtap="openDay"
-    >
-      <block wx:if="{{!item.blank}}">
-        <text class="cal-day">{{item.day}}</text>
-        <view class="cal-fire lv-{{item.level}}"></view>
-      </block>
+    <!-- 顶部螺旋装订 -->
+    <view class="binding">
+      <view class="ring" wx:for="{{rings}}" wx:key="*this">
+        <view class="ring-hole"></view>
+      </view>
     </view>
+
+    <!-- 像素花园横幅 -->
+    <image class="cal-banner" src="/images/cal-banner.png" mode="aspectFill"></image>
+
+    <view class="cal-body">
+
+      <view class="cal-head">
+        <view class="cal-nav" bindtap="prevMonth">‹</view>
+        <view class="cal-title">
+          <view class="cal-month">{{monthLabel}}</view>
+          <view class="cal-summary">{{summary}}</view>
+        </view>
+        <view class="cal-nav" bindtap="nextMonth">›</view>
+      </view>
+
+      <view class="cal-week">
+        <text
+          class="cal-week-cell {{index >= 5 ? 'is-weekend' : ''}}"
+          wx:for="{{weekLabels}}"
+          wx:key="*this"
+        >{{item}}</text>
+      </view>
+
+      <view class="cal-grid">
+        <view
+          class="cal-cell {{item.blank ? 'is-blank' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isWeekend ? 'is-weekend' : ''}}"
+          wx:for="{{cells}}"
+          wx:key="key"
+          data-date="{{item.date}}"
+          bindtap="openDay"
+        >
+          <block wx:if="{{!item.blank}}">
+            <text class="cal-day">{{item.day}}</text>
+            <image
+              class="cal-flame"
+              wx:if="{{item.level > 0}}"
+              src="/images/flame-{{item.level}}.png"
+              mode="aspectFit"
+            ></image>
+            <view class="cal-flame-holder" wx:else></view>
+          </block>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="desk-base"></view>
   </view>
 
   <view class="cal-legend">
-    <view class="legend-item"><view class="cal-fire lv-0"></view><text>没安排</text></view>
-    <view class="legend-item"><view class="cal-fire lv-1"></view><text>没动</text></view>
-    <view class="legend-item"><view class="cal-fire lv-2"></view><text>做了些</text></view>
-    <view class="legend-item"><view class="cal-fire lv-4"></view><text>全清</text></view>
+    <view class="legend-item"><image class="legend-flame" src="/images/flame-1.png" mode="aspectFit"></image><text>没动</text></view>
+    <view class="legend-item"><image class="legend-flame" src="/images/flame-2.png" mode="aspectFit"></image><text>开了个头</text></view>
+    <view class="legend-item"><image class="legend-flame" src="/images/flame-3.png" mode="aspectFit"></image><text>过半</text></view>
+    <view class="legend-item"><image class="legend-flame" src="/images/flame-4.png" mode="aspectFit"></image><text>全清</text></view>
   </view>
 
 </view>

@@ -1,4 +1,4 @@
-// 日历页：一个月一屏，每格显示当天完成情况
+// 日历页：台历外形 + 每天的彩色像素火焰表示进度
 var store = require('../../utils/store.js')
 var dateUtil = require('../../utils/date.js')
 
@@ -7,24 +7,23 @@ Page({
     year: 0,
     month: 0,
     monthLabel: '',
+    summary: '',
     cells: [],
-    summary: ''
+    rings: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    weekLabels: ['一', '二', '三', '四', '五', '六', '日']
   },
 
   onShow: function () {
     var t = dateUtil.today()
-    var y = Number(t.slice(0, 4))
-    var m = Number(t.slice(5, 7))
     if (!this.data.year) {
-      this.setData({ year: y, month: m })
+      this.setData({ year: Number(t.slice(0, 4)), month: Number(t.slice(5, 7)) })
     }
     this.build(this.data.year, this.data.month)
   },
 
-  /** 生成当月格子：前面补空格，每格带完成率和分类色 */
   build: function (year, month) {
     var first = new Date(year, month - 1, 1)
-    var startWeek = (first.getDay() + 6) % 7          // 周一为一周开头
+    var startWeek = (first.getDay() + 6) % 7
     var days = new Date(year, month, 0).getDate()
     var todayStr = dateUtil.today()
 
@@ -49,9 +48,9 @@ Page({
 
       var ratio = total ? done / total : 0
       var level = 0
-      if (total) {
-        level = ratio === 1 ? 4 : ratio >= 0.6 ? 3 : ratio > 0 ? 2 : 1
-      }
+      if (total) level = ratio === 1 ? 4 : ratio >= 0.5 ? 3 : ratio > 0 ? 2 : 1
+
+      var weekday = (startWeek + d - 1) % 7   // 0 = 周一
 
       cells.push({
         key: dateStr,
@@ -62,8 +61,7 @@ Page({
         done: done,
         level: level,
         isToday: dateStr === todayStr,
-        isPast: dateStr < todayStr,
-        isFuture: dateStr > todayStr
+        isWeekend: weekday >= 5
       })
     }
 
