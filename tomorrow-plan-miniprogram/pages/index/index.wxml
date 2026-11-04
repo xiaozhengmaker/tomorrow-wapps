@@ -2,25 +2,12 @@
 
   <!-- 顶部：火焰 + 日期 + 今日进度（压成一行，把首屏让给清单） -->
   <view class="topbar">
-    <view class="mascot-playground">
-      <view
-        class="topbar-mascot {{blinking ? 'is-blink' : ''}}"
-        style="transform: translate({{mx}}rpx, {{my}}rpx)"
+<image
+        class="topbar-flame {{petting ? 'is-pet' : ''}}"
+        src="/images/mascot-l{{tier}}.png"
+        mode="aspectFit"
         bindtap="petMascot"
-      >
-        <view class="mascot-inner {{petting ? 'mascot-pet' : ''}}">
-          <view class="mascot-box"><view class="mascot"></view></view>
-        </view>
-      </view>
-    </view>
-    <view class="topbar-main">
-      <view class="topbar-date">{{todayLabel}}</view>
-      <view class="topbar-stat">{{todayStat}}</view>
-    </view>
-    <view class="streak" wx:if="{{streak > 0}}">
-      <view class="flame"></view>
-      <text class="num">{{streak}}</text>
-    </view>
+      ></image>
   </view>
 
   <!-- 清单：第一屏就是它 -->

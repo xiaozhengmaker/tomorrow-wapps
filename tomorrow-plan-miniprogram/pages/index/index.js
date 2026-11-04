@@ -46,15 +46,12 @@ Page({
     quickDates: [],
     isCustomDate: false,
     composerOpen: false,
-    mx: 0,
-    my: 0,
-    blinking: false,
+    tier: 0,
     todayLabel: '',
     todayStat: ''
   },
 
   onShow: function () {
-    this.startRoam()
     var draft = store.getDraft()
     var cards = []
     var today = buildCard(store.getPlan(dateUtil.today()), '今日')
@@ -76,6 +73,7 @@ Page({
       needReview: needReview,
       remindTime: settings.remindTime,
       streak: streak,
+      tier: this.flameTier(streak),
       petting: this.data.petting || false,
       target: target,
       targetLabel: dateUtil.friendlyDate(target),
@@ -124,53 +122,25 @@ Page({
     this.setData({ composerOpen: false })
   },
 
-  /** 吉祥物在顶部区域游荡：大部分时候飘过去，偶尔闪一下换位置 */
-  startRoam: function () {
-    var self = this
-    if (this._roamTimer) return
-    this._roamTimer = setInterval(function () {
-      self.roamStep()
-    }, 3600)
-  },
-
-  stopRoam: function () {
-    if (this._roamTimer) {
-      clearInterval(this._roamTimer)
-      this._roamTimer = null
-    }
-  },
-
-  roamStep: function () {
-    // 可移动范围（rpx）：顶部那条带子，别飘到清单上去
-    var MAX_X = 556
-    var MAX_Y = 112
-    var x = Math.round(Math.random() * MAX_X)
-    var y = Math.round(Math.random() * MAX_Y)
-
-    if (Math.random() < 0.35) {
-      // 闪现：先淡出，瞬移，再淡入
-      var self = this
-      this.setData({ blinking: true })
-      clearTimeout(this._blinkTimer)
-      this._blinkTimer = setTimeout(function () {
-        self.setData({ mx: x, my: y, blinking: false })
-      }, 170)
-    } else {
-      this.setData({ mx: x, my: y })
-    }
-  },
-
   /** 摸一下吉祥物：晃一晃 + 冒火星 */
   petMascot: function () {
     var self = this
     if (this.data.petting) return
     this.setData({ petting: true })
     wx.vibrateShort && wx.vibrateShort({ type: 'light' })
-    this.roamStep()
     clearTimeout(this._petTimer)
     this._petTimer = setTimeout(function () {
       self.setData({ petting: false })
     }, 900)
+  },
+
+  /** 打卡等级：连续天数越多，火焰越贵 */
+  flameTier: function (streak) {
+    if (!streak || streak <= 0) return 0
+    if (streak >= 14) return 4   // 钻石蓝
+    if (streak >= 7) return 3    // 金
+    if (streak >= 3) return 2    // 银
+    return 1                     // 普通
   },
 
   /** 连续复盘了几天（今天还没复盘就从昨天往前数） */
@@ -204,12 +174,7 @@ Page({
     wx.switchTab({ url: '/pages/review/review' })
   },
 
-  onUnload: function () {
-    this.stopRoam()
-  },
-
   onHide: function () {
-    this.stopRoam()
     store.setDraft(this.data.draft)
   },
 
