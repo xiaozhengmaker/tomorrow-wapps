@@ -279,20 +279,42 @@
   min-height: 104rpx;
 }
 
+/* 顶部一条「游乐场」，火焰在这条带子里飘，不遮挡下面的清单 */
+.mascot-playground {
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+  top: 0;
+  height: 300rpx;
+  z-index: 3;
+  pointer-events: none;
+}
+
 .topbar-mascot {
   position: absolute;
-  left: -8rpx;
-  top: -18rpx;
-  z-index: 3;
+  left: 0;
+  top: 0;
   width: 132rpx;
   height: 152rpx;
-  display: flex;
-  align-items: flex-start;
-  transform: scale(0.62);
+  pointer-events: auto;
   transform-origin: 0 0;
-  /* 这一层投影就是「悬浮」的关键：有影子才会觉得它离开了纸面 */
+  /* 飘过去要有点回弹感 */
+  transition: transform 1.4s cubic-bezier(0.34, 1.4, 0.64, 1);
   filter: drop-shadow(0 10rpx 14rpx rgba(255, 107, 26, 0.28))
           drop-shadow(0 3rpx 4rpx rgba(0, 0, 0, 0.16));
+}
+
+/* 闪现：不带动画地瞬移 */
+.topbar-mascot.is-blink {
+  transition: opacity 0.16s linear;
+  opacity: 0;
+}
+
+.mascot-inner {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.62);
+  transform-origin: 0 0;
 }
 
 .topbar-main {

@@ -2,8 +2,16 @@
 
   <!-- 顶部：火焰 + 日期 + 今日进度（压成一行，把首屏让给清单） -->
   <view class="topbar">
-    <view class="topbar-mascot mascot-float {{petting ? 'mascot-pet' : ''}}" bindtap="petMascot">
-      <view class="mascot-box"><view class="mascot"></view></view>
+    <view class="mascot-playground">
+      <view
+        class="topbar-mascot {{blinking ? 'is-blink' : ''}}"
+        style="transform: translate({{mx}}rpx, {{my}}rpx)"
+        bindtap="petMascot"
+      >
+        <view class="mascot-inner {{petting ? 'mascot-pet' : ''}}">
+          <view class="mascot-box"><view class="mascot"></view></view>
+        </view>
+      </view>
     </view>
     <view class="topbar-main">
       <view class="topbar-date">{{todayLabel}}</view>

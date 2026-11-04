@@ -46,11 +46,15 @@ Page({
     quickDates: [],
     isCustomDate: false,
     composerOpen: false,
+    mx: 0,
+    my: 0,
+    blinking: false,
     todayLabel: '',
     todayStat: ''
   },
 
   onShow: function () {
+    this.startRoam()
     var draft = store.getDraft()
     var cards = []
     var today = buildCard(store.getPlan(dateUtil.today()), '今日')
@@ -120,12 +124,49 @@ Page({
     this.setData({ composerOpen: false })
   },
 
+  /** 吉祥物在顶部区域游荡：大部分时候飘过去，偶尔闪一下换位置 */
+  startRoam: function () {
+    var self = this
+    if (this._roamTimer) return
+    this._roamTimer = setInterval(function () {
+      self.roamStep()
+    }, 3600)
+  },
+
+  stopRoam: function () {
+    if (this._roamTimer) {
+      clearInterval(this._roamTimer)
+      this._roamTimer = null
+    }
+  },
+
+  roamStep: function () {
+    // 可移动范围（rpx）：顶部那条带子，别飘到清单上去
+    var MAX_X = 556
+    var MAX_Y = 112
+    var x = Math.round(Math.random() * MAX_X)
+    var y = Math.round(Math.random() * MAX_Y)
+
+    if (Math.random() < 0.35) {
+      // 闪现：先淡出，瞬移，再淡入
+      var self = this
+      this.setData({ blinking: true })
+      clearTimeout(this._blinkTimer)
+      this._blinkTimer = setTimeout(function () {
+        self.setData({ mx: x, my: y, blinking: false })
+      }, 170)
+    } else {
+      this.setData({ mx: x, my: y })
+    }
+  },
+
   /** 摸一下吉祥物：晃一晃 + 冒火星 */
   petMascot: function () {
     var self = this
     if (this.data.petting) return
     this.setData({ petting: true })
     wx.vibrateShort && wx.vibrateShort({ type: 'light' })
+    this.roamStep()
     clearTimeout(this._petTimer)
     this._petTimer = setTimeout(function () {
       self.setData({ petting: false })
@@ -163,7 +204,12 @@ Page({
     wx.switchTab({ url: '/pages/review/review' })
   },
 
+  onUnload: function () {
+    this.stopRoam()
+  },
+
   onHide: function () {
+    this.stopRoam()
     store.setDraft(this.data.draft)
   },
 
