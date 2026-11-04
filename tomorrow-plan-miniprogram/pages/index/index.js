@@ -69,6 +69,7 @@ Page({
       needReview: needReview,
       remindTime: settings.remindTime,
       streak: streak,
+      petting: this.data.petting || false,
       target: target,
       targetLabel: dateUtil.friendlyDate(target),
       isCustomDate: target !== dateUtil.today() && target !== dateUtil.tomorrow(),
@@ -103,6 +104,18 @@ Page({
       targetLabel: dateUtil.friendlyDate(date),
       isCustomDate: date !== dateUtil.today() && date !== dateUtil.tomorrow()
     })
+  },
+
+  /** 摸一下吉祥物：晃一晃 + 冒火星 */
+  petMascot: function () {
+    var self = this
+    if (this.data.petting) return
+    this.setData({ petting: true })
+    wx.vibrateShort && wx.vibrateShort({ type: 'light' })
+    clearTimeout(this._petTimer)
+    this._petTimer = setTimeout(function () {
+      self.setData({ petting: false })
+    }, 900)
   },
 
   /** 连续复盘了几天（今天还没复盘就从昨天往前数） */

@@ -1,12 +1,9 @@
-"""按参考图重做像素火焰：黑描边 + 橙色外焰 + 黄色中焰 + 奶白核心。
+"""像素火焰 v3：不对称 + 右侧独立火舌 + 火心偏下。
 
-做法：先画一个实心轮廓，然后自动分层——
-  贴边的格子 → 黑描边
-  往内第 1 圈 → 橙
-  第 2~3 圈   → 黄
-  更里面      → 奶白
-这样不用手摆每一格的颜色。
-同时输出纯黑白版（给「最好也是黑白的」那个要求）。
+要点：
+  · 主火焰往左偏，左右边缘不镜像
+  · 右侧 3 格宽的小火舌，和主火焰之间留一道缝
+  · 分层按「到边界的距离」，但底部加权——火心自然落在下三分之一
 """
 
 import os
@@ -15,37 +12,36 @@ from PIL import Image
 OUT = os.path.join(os.path.dirname(__file__), "..", "images")
 os.makedirs(OUT, exist_ok=True)
 
-# 实心轮廓：主火焰 + 右侧一小簇
 SILHOUETTE = [
     "........#.......",
-    ".......###......",
-    "......#####.....",
-    "......#####.....",
-    ".....#######....",
-    ".....#######....",
-    "....#########...",
-    "....#########...",
-    "...###########..",
-    "...###########..",
-    "..#############.",
-    "..#############.",
-    "..#############.",
-    ".###############",
-    ".###############",
-    "..#############.",
-    "...###########..",
-    "....#########...",
+    ".......##.......",
+    "......###.......",
+    "......####......",
+    ".....#####......",
+    ".....######.....",
+    "....#######.###.",
+    "...########.###.",
+    "...########.###.",
+    "..#########.###.",
+    "..#########.....",
+    "..##########....",
+    ".###########....",
+    ".###########....",
+    ".###########....",
+    "..##########....",
+    "...########.....",
+    "....######......",
 ]
 COLOR = {
-    "K": (26, 26, 26, 255),     # 描边
-    "O": (255, 107, 26, 255),   # 橙
-    "Y": (255, 176, 32, 255),   # 黄
-    "W": (255, 240, 192, 255),  # 奶白核心
+    "K": (26, 26, 26, 255),
+    "O": (255, 107, 26, 255),
+    "Y": (255, 176, 32, 255),
+    "W": (255, 240, 192, 255),
 }
 MONO = {
     "K": (10, 10, 10, 255),
-    "O": (60, 60, 60, 255),
-    "Y": (140, 140, 140, 255),
+    "O": (70, 70, 70, 255),
+    "Y": (150, 150, 150, 255),
     "W": (255, 255, 255, 255),
 }
 
@@ -64,11 +60,8 @@ def build(rows):
                     return True
         return False
 
-    # 从边缘做多轮腐蚀，记录每个内部格子的「深度」
     depth = {}
-    frontier = [
-        (x, y) for y in range(h) for x in range(w) if solid[y][x] and near_edge(x, y)
-    ]
+    frontier = [(x, y) for y in range(h) for x in range(w) if solid[y][x] and near_edge(x, y)]
     d = 0
     seen = set()
     while frontier:
@@ -94,11 +87,13 @@ def build(rows):
                 row += "."
                 continue
             dd = depth.get((x, y), 0)
+            bias = 1.6 * max(0.0, (y - h * 0.35) / (h * 0.65))
+            score = dd + bias
             if dd == 0:
                 row += "K"
-            elif dd == 1:
+            elif score < 1.6:
                 row += "O"
-            elif dd <= 2:
+            elif score < 3.2:
                 row += "Y"
             else:
                 row += "W"
@@ -147,17 +142,13 @@ def to_svg(rows, palette):
 if __name__ == "__main__":
     layered = build(SILHOUETTE)
     print("\n".join(layered))
-
     render(layered, 32, COLOR).save(os.path.join(OUT, "logo.png"))
     render(layered, 3, COLOR).save(os.path.join(OUT, "logo-48.png"))
     render(layered, 6, COLOR).save(os.path.join(OUT, "mascot.png"))
     render(layered, 32, MONO).save(os.path.join(OUT, "logo-mono.png"))
     render(layered, 6, MONO).save(os.path.join(OUT, "mascot-mono.png"))
-
     with open(os.path.join(OUT, "logo.svg"), "w", encoding="utf-8") as f:
         f.write(to_svg(layered, COLOR))
     with open(os.path.join(OUT, "logo-mono.svg"), "w", encoding="utf-8") as f:
         f.write(to_svg(layered, MONO))
-
-    for name in ("logo.png", "logo-48.png", "mascot.png", "logo-mono.png", "logo.svg"):
-        print(f"{name:16} {os.path.getsize(os.path.join(OUT, name)):>6} bytes")
+    print("done")
