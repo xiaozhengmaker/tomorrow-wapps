@@ -131,7 +131,7 @@
 
 .cal-cell {
   width: 14.28%;
-  height: 100rpx;
+  height: 132rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -217,4 +217,20 @@
   height: 24rpx;
   margin-right: 6rpx;
   image-rendering: pixelated;
+}
+
+/* 格子里的状态文字 */
+.cal-label {
+  margin-top: 4rpx;
+  font-size: 17rpx;
+  font-weight: 700;
+  color: #8a8a8a;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+  transform: scale(0.92);
+}
+
+.cal-cell.is-today .cal-label {
+  color: #ff6b1a;
 }

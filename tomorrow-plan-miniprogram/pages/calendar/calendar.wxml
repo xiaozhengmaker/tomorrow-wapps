@@ -48,6 +48,7 @@
               mode="aspectFit"
             ></image>
             <view class="cal-flame-holder" wx:else></view>
+            <text class="cal-label" wx:if="{{item.level > 0}}">{{item.label}}</text>
           </block>
         </view>
       </view>

@@ -49,6 +49,7 @@ Page({
       var ratio = total ? done / total : 0
       var level = 0
       if (total) level = ratio === 1 ? 4 : ratio >= 0.5 ? 3 : ratio > 0 ? 2 : 1
+      var label = ['', '没动', '开了个头', '过半', '全清'][level]
 
       var weekday = (startWeek + d - 1) % 7   // 0 = 周一
 
@@ -60,6 +61,7 @@ Page({
         total: total,
         done: done,
         level: level,
+        label: label,
         isToday: dateStr === todayStr,
         isWeekend: weekday >= 5
       })
