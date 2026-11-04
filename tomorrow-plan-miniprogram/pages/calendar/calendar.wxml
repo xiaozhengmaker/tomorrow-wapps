@@ -1,0 +1,38 @@
+<view class="page">
+
+  <view class="cal-head">
+    <view class="cal-nav" bindtap="prevMonth">‹</view>
+    <view class="cal-title">
+      <view class="cal-month">{{monthLabel}}</view>
+      <view class="cal-summary">{{summary}}</view>
+    </view>
+    <view class="cal-nav" bindtap="nextMonth">›</view>
+  </view>
+
+  <view class="cal-week">
+    <text class="cal-week-cell" wx:for="{{['一','二','三','四','五','六','日']}}" wx:key="*this">{{item}}</text>
+  </view>
+
+  <view class="cal-grid">
+    <view
+      class="cal-cell {{item.blank ? 'is-blank' : ''}} {{item.isToday ? 'is-today' : ''}}"
+      wx:for="{{cells}}"
+      wx:key="key"
+      data-date="{{item.date}}"
+      bindtap="openDay"
+    >
+      <block wx:if="{{!item.blank}}">
+        <text class="cal-day">{{item.day}}</text>
+        <view class="cal-fire lv-{{item.level}}"></view>
+      </block>
+    </view>
+  </view>
+
+  <view class="cal-legend">
+    <view class="legend-item"><view class="cal-fire lv-0"></view><text>没安排</text></view>
+    <view class="legend-item"><view class="cal-fire lv-1"></view><text>没动</text></view>
+    <view class="legend-item"><view class="cal-fire lv-2"></view><text>做了些</text></view>
+    <view class="legend-item"><view class="cal-fire lv-4"></view><text>全清</text></view>
+  </view>
+
+</view>

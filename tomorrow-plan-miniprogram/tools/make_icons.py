@@ -1,8 +1,4 @@
-"""画底部导航的三个像素图标（81x81），以及吉祥物像素图的 CSS 生成。
-
-像素图标用 9x9 的格子画：每个格子 9px，硬边、无抗锯齿 —— 和 Firefly 那个
-像素幽灵是同一套语言。
-"""
+"""底部导航的像素图标（81x81，9x9 格，每格 9px，硬边无抗锯齿）。"""
 
 import os
 from PIL import Image
@@ -10,14 +6,13 @@ from PIL import Image
 OUT = os.path.join(os.path.dirname(__file__), "..", "images")
 os.makedirs(OUT, exist_ok=True)
 
-GRID = 9          # 9x9 像素格
-CELL = 9          # 每格 9px -> 81x81
-GRAY = (176, 176, 176, 255)
-BLUE = (28, 176, 246, 255)
+GRID = 9
+CELL = 9
+GRAY = (154, 154, 154, 255)
+ORANGE = (255, 107, 26, 255)
 
-
-# 9x9 点阵，1=实心
 ICONS = {
+    # 清单：三行「方块 + 横杠」
     "list": [
         "000000000",
         "111011110",
@@ -29,6 +24,19 @@ ICONS = {
         "111011110",
         "111011110",
     ],
+    # 日历：格子底纹 + 顶部两条挂钉
+    "calendar": [
+        "010000010",
+        "111111111",
+        "101010101",
+        "111111111",
+        "101010101",
+        "111111111",
+        "101010101",
+        "111111111",
+        "000000000",
+    ],
+    # 拆解：一竖分叉成 Y
     "split": [
         "110000011",
         "011000110",
@@ -40,6 +48,7 @@ ICONS = {
         "000000000",
         "000000000",
     ],
+    # 复盘：一簇火焰
     "review": [
         "000010000",
         "000111000",
@@ -53,6 +62,7 @@ ICONS = {
     ],
 }
 
+
 def draw(name, rows, color):
     img = Image.new("RGBA", (GRID * CELL, GRID * CELL), (0, 0, 0, 0))
     px = img.load()
@@ -63,15 +73,13 @@ def draw(name, rows, color):
             for dy in range(CELL):
                 for dx in range(CELL):
                     px[x * CELL + dx, y * CELL + dy] = color
-    path = os.path.join(OUT, name + ".png")
-    img.save(path)
-    return path
+    img.save(os.path.join(OUT, name + ".png"))
 
 
 if __name__ == "__main__":
     for key, rows in ICONS.items():
-        draw(key + "", rows, GRAY)
-        draw(key + "-on", rows, BLUE)
+        draw(key, rows, GRAY)
+        draw(key + "-on", rows, ORANGE)
     for f in sorted(os.listdir(OUT)):
-        p = os.path.join(OUT, f)
-        print(f"{f:16} {os.path.getsize(p):>6} bytes")
+        if f.startswith(("list", "split", "review", "calendar")):
+            print(f"{f:16} {os.path.getsize(os.path.join(OUT, f)):>6} bytes")

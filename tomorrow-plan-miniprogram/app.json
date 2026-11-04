@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/calendar/calendar",
     "pages/plan/plan",
     "pages/breakdown/breakdown",
     "pages/review/review",
@@ -16,16 +17,22 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#afafaf",
-    "selectedColor": "#1cb0f6",
+    "color": "#9a9a9a",
+    "selectedColor": "#ff6b1a",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "清单",
+        "text": "今天",
         "iconPath": "images/list.png",
         "selectedIconPath": "images/list-on.png"
+      },
+      {
+        "pagePath": "pages/calendar/calendar",
+        "text": "日历",
+        "iconPath": "images/calendar.png",
+        "selectedIconPath": "images/calendar-on.png"
       },
       {
         "pagePath": "pages/breakdown/breakdown",

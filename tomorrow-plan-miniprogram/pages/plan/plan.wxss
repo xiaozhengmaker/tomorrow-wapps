@@ -593,3 +593,21 @@
 
 .row-done .row-body { background: #f7f7f7 !important; }
 .row-done .row-title { color: #9a9a9a; }
+
+/* ================= 布局重构：勾选热区放大 ================= */
+
+.row-check {
+  width: 72rpx;
+  height: 72rpx;
+  margin-left: 8rpx;
+}
+
+/* 右半行都能点 */
+.row-check::after {
+  content: '';
+  position: absolute;
+  right: -24rpx;
+  top: -24rpx;
+  bottom: -24rpx;
+  width: 140rpx;
+}

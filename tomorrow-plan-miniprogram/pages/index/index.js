@@ -44,7 +44,10 @@ Page({
     target: '',
     targetLabel: '明天',
     quickDates: [],
-    isCustomDate: false
+    isCustomDate: false,
+    composerOpen: false,
+    todayLabel: '',
+    todayStat: ''
   },
 
   onShow: function () {
@@ -73,7 +76,9 @@ Page({
       target: target,
       targetLabel: dateUtil.friendlyDate(target),
       isCustomDate: target !== dateUtil.today() && target !== dateUtil.tomorrow(),
-      quickDates: this.buildQuickDates()
+      quickDates: this.buildQuickDates(),
+      todayLabel: dateUtil.friendlyDate(dateUtil.today()),
+      todayStat: (cards[0] ? cards[0].doneCount + '/' + cards[0].total + ' 已完成' : '今天还空着')
     })
   },
 
@@ -104,6 +109,15 @@ Page({
       targetLabel: dateUtil.friendlyDate(date),
       isCustomDate: date !== dateUtil.today() && date !== dateUtil.tomorrow()
     })
+  },
+
+  /** 打开 / 收起输入面板 */
+  openComposer: function () {
+    this.setData({ composerOpen: true })
+  },
+
+  closeComposer: function () {
+    this.setData({ composerOpen: false })
   },
 
   /** 摸一下吉祥物：晃一晃 + 冒火星 */
@@ -181,6 +195,7 @@ Page({
   },
 
   generate: function () {
+    this.setData({ composerOpen: false })
     var text = String(this.data.draft || '').trim()
     if (!text) {
       wx.showToast({ title: '先写点要做的事', icon: 'none' })

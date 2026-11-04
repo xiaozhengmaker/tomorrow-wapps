@@ -1,0 +1,154 @@
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24rpx 28rpx 120rpx;
+  background: #ffffff;
+}
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0 26rpx;
+}
+
+.cal-nav {
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 64rpx;
+  text-align: center;
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #0a0a0a;
+  border: 4rpx solid #dcdcdc;
+  border-radius: 10rpx;
+  box-shadow: 0 6rpx 0 #dcdcdc;
+}
+
+.cal-nav:active {
+  transform: translateY(6rpx);
+  box-shadow: 0 0 0 #dcdcdc;
+}
+
+.cal-title {
+  flex: 1;
+  text-align: center;
+}
+
+.cal-month {
+  font-size: 34rpx;
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: -0.5rpx;
+}
+
+.cal-summary {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: #9a9a9a;
+  font-weight: 600;
+}
+
+.cal-week {
+  display: flex;
+  padding-bottom: 10rpx;
+}
+
+.cal-week-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 22rpx;
+  color: #9a9a9a;
+  font-weight: 700;
+}
+
+.cal-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cal-cell {
+  width: 14.28%;
+  height: 96rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cal-cell.is-blank {
+  opacity: 0;
+}
+
+.cal-day {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #0a0a0a;
+  line-height: 1;
+}
+
+.cal-cell.is-today .cal-day {
+  color: #ff6b1a;
+}
+
+.cal-cell.is-today::before {
+  content: '';
+  position: absolute;
+  top: 4rpx;
+  left: 50%;
+  margin-left: -3rpx;
+  width: 6rpx;
+  height: 6rpx;
+  background: #ff6b1a;
+}
+
+/* 火苗：当天完成度 */
+.cal-fire {
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 8rpx;
+  border-radius: 50% 50% 50% 6rpx;
+  background: transparent;
+}
+
+.cal-fire.lv-0 {
+  background: #f0f0f0;
+}
+
+.cal-fire.lv-1 {
+  background: #d8d8d8;
+}
+
+.cal-fire.lv-2 {
+  background: #ffb020;
+}
+
+.cal-fire.lv-3 {
+  background: #ff8a1a;
+}
+
+.cal-fire.lv-4 {
+  background: #ff6b1a;
+}
+
+.cal-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 40rpx;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 14rpx 12rpx;
+  font-size: 21rpx;
+  color: #9a9a9a;
+  font-weight: 600;
+}
+
+.legend-item .cal-fire {
+  margin: 0 8rpx 0 0;
+  width: 16rpx;
+  height: 16rpx;
+}
